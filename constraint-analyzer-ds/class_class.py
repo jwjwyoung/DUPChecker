@@ -72,14 +72,22 @@ class Java_class():
 					self.methods[key] = b
 	def compare(self, old_java_class):
 		changed_methods = []
+		changed_serilize = []
 		old_methods = old_java_class.methods
 		for key in self.methods.keys():
 			method = self.methods[key]
 			if key in old_methods.keys():
 				old_method = old_methods[key]
+				if "serialize" in key:
+					try:
+						if str(old_method) != str(method):
+							changed_serilize.append(method)
+					except:
+						print("cannot transfer to str")
 				if old_method.throws != method.throws:
 					changed_methods.append(method)
-		return changed_methods
+		return changed_methods, changed_serilize
+
 
 
 class Java_method():
