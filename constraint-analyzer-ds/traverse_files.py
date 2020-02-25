@@ -37,6 +37,7 @@ def compare2versions(tag_old, tag_new, folder):
 	unhandled_cnt = 0
 	size1 = 0
 	size2 = 0
+	output_log = "-----------{} vs {}-----------\n".format(tag_old, tag_new)
 	for key in changed_files:
 		java_file_old = None
 		java_file_new = None
@@ -61,8 +62,14 @@ def compare2versions(tag_old, tag_new, folder):
 			changed_classes = java_file_new.compare(java_file_old)
 			for value1, value2 in changed_classes:
 				size1 += len(value1)	
-				size2 += len(value2)		
-	output_log = 'add: {}, delete: {}, change: {}, unhandled: {} size_exceptions: {} size_serialize: {}\n'.format(add_cnt, delete_cnt, change_cnt, unhandled_cnt, size1, size2)
+				size2 += len(value2)
+				for old_src, new_src in value2:	
+					output_log += "\n".join(old_src)
+					output_log += "\n"
+					output_log += "+++++++++++++++++++++++\n"	
+					output_log += "\n".join(new_src)	
+					output_log += "\n"
+	output_log += 'add: {}, delete: {}, change: {}, unhandled: {} size_exceptions: {} size_serialize: {}\n'.format(add_cnt, delete_cnt, change_cnt, unhandled_cnt, size1, size2)
 	log_file.write(output_log)
 
 def getChangedFiles(tag_old, tag_new, folder):
@@ -107,6 +114,7 @@ def main():
 				tag_old = tags[i]
 				tag_new = tags[i+1]
 				compare2versions(tag_old, tag_new, folder)
+				
 			log_file.close()
 		if sf: 
 			tag = tags[-1]
