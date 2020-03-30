@@ -23,10 +23,26 @@ def construct_all_versions(folder, regex_str):
 		versions.append(version)
 	return versions
 
+def extract_proto_change(tag_old, tag_new, folder):
+	v_old = Version_class(folder, tag_old)
+	v_new = Version_class(folder, tag_new)
+	changed_files, changed_contents = getChangedFiles(tag_old, tag_new, folder)
+	proto_files = []
+	proto_contents = []
+	for i in range(len(changed_files)):
+		f = changed_files[i]
+		if f.endswith(".proto"):
+			fc = changed_contents[i]	
+			proto_files.append(f)
+			proto_contents.append("\n".join(fc))
+	return proto_files, proto_contents
+
+
 def compare2versions(tag_old, tag_new, folder):
 	v_old = Version_class(folder, tag_old)
 	v_new = Version_class(folder, tag_new)
-	changed_files = getChangedFiles(tag_old, tag_new, folder)
+	changed_files, changed_contents = getChangedFiles(tag_old, tag_new, folder)
+	changed_files = getJavaFiles(changed_files)
 	v_old.build()
 	v_old.parseFiles(changed_files)
 	v_new.build()
@@ -77,14 +93,32 @@ def getChangedFiles(tag_old, tag_new, folder):
 	cmd = 'cd {}; git diff {} {}'.format(folder, tag_old, tag_new)
 	output = os.popen(cmd).read()
 	cnt = 0
-	for line in output.split("\n"):
+	changed_contents = []
+	lines = output.split("\n")
+	start_index = 0
+	end_index = 0
+	for i in range(len(lines)):
+		line = lines[i]
 		prefix = "diff --git a"
 		if line.startswith(prefix):
+			start_index = end_index
+			end_index = i
+			if start_index < end_index:
+				changed_contents.append(lines[start_index:end_index])
 			filename = folder + line[len(prefix):-1].split(" ")[0]
-			if filename.endswith(".java") and filename not in files:
+			if filename not in files:
 				files.append(filename)
 				# print(filename)
-	return files
+	changed_contents.append(lines[end_index:])
+	print(len(files) == len(changed_contents))
+	return files, changed_contents
+
+def getJavaFiles(files):
+	results = []
+	for f in files:
+		if f.endswith("java"):
+			results.append(f)
+	return results
  
 def main():
 	if __name__== "__main__" :
@@ -93,21 +127,25 @@ def main():
 		            help='')
 		parser.add_argument('--excep', action='store_true', help='choose whether you want the data of methods for changed exceptions')
 		parser.add_argument('--serialize', action='store_true', help='choose whether you want the data of methods of serialization function')
+		parser.add_argument('--proto', action='store_true', help='choose whether you want the data of protofiles')
+		
 		args = parser.parse_args()
 		ce = args.excep
 		print(ce)
 		sf = args.serialize
+		proto = args.proto
 		folder = "../hbase"
 		regex_str = "[0-9]*\.[0-9]*\.[0-9]*\.*RC"
 		if args.app:
 			folder = args.app
 			regex_str = ".*"
+		app_name = folder.split("/")[-1]
 		tags = extract_tags(folder, regex_str)
 		if ce:
 			tag_old = tags[-2]
 			tag_new = tags[-1]
 			global log_file
-			log_file_name = folder.split("/")[-1] + "exceptions.log"
+			log_file_name = app_name + "exceptions.log"
 			log_file = open(log_file_name, "w")
 			# compare2versions(tag_old, tag_new, folder)
 			for i in range(len(tags)-1):
@@ -131,6 +169,22 @@ def main():
 						if "serialize" in method_name:
 							cnt += 1
 			print(cnt)
-    	
+		if proto:
+			proto_log_fn = "proto_change_" + app_name + ".log"
+			proto_log_f = open(proto_log_fn, "w")
+			for i in range(len(tags)-1):
+				tag_old = tags[i]
+				tag_new = tags[i+1]
+				proto_files, proto_contents = extract_proto_change(tag_old, tag_new, folder)
+				proto_log_f.write(str(len(proto_files)))
+				proto_log_f.write("\n")
+				proto_log_f.write("\n".join(proto_contents))
+				v_old = Version_class(folder, tag_old)
+				v_old.build()
+				v_old.parseFiles(proto_files)
+				if len(proto_files) > 0:
+					break
+				
+			proto_log_f.close()
 log_file = None
 main()
