@@ -1,6 +1,10 @@
 import os
+import sys
 
-app_folders = ["../cassandra", "../hbase", "../hadoop"]
+option = sys.argv[1]
+app_folders = ["../hadoop", "../hbase", "../cassandra"]
 for app in app_folders:
-    cmd = "python traverse_files.py --app={} --excep".format(app)
+    app_name = app.split("/")[-1]
+    cmd = "python3 traverse_files.py --app=\"{}\" {} > log/{}_total.log".format(app, option, app_name)
+    print(cmd)
     os.system(cmd)
