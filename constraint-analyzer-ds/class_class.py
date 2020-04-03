@@ -359,6 +359,19 @@ class Version_class:
                 self.proto_files.append(pf)
                 pf.parseAst()
 
+    def protoOverview(self):
+        changed_files = [ f for f in self.files if f.endswith(".proto")]
+        self.parseFiles(changed_files)
+        message_sum = 0
+        enum_sum = 0
+        for key in self.proto_files.keys():
+            pf = self.proto_files[key]
+            message_sum += len(pf.messages)
+            enum_sum += len(pf.enum)
+            
+        print("Total number of messages {}".format(message_sum))
+        print("Total number of enums {}".format(enum_sum))
+        
     def parseFiles(self, changed_files):
         for path in self.files:
             if path in changed_files and os.path.exists(path):
