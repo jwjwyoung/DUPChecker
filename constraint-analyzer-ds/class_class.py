@@ -384,7 +384,7 @@ class Version_class:
 
     def protoOverview(self):
         changed_files = [f for f in self.files if f.endswith(".proto")]
-        self.parseFiles(changed_files)
+        self.parseFiles([], ['proto'])
         all_fields = []
         all_msgs = []
         all_enums = []
@@ -392,13 +392,21 @@ class Version_class:
             pf = self.proto_files[key]
             all_msgs += pf.messages.values()
             all_enums += pf.enums.values()
+        
+        all_enum_names = [e.enum_name for e in all_enums]
         for msg in all_msgs:
             all_fields += msg.fields.values()
-        
+            for field in msg.fields.values():
+                field_type = field.field_type
+                if field_type in all_enum_names:
+                    field.is_enum_type = True
+                    msg.has_enum_type = True
+
         msgs_used_enums = [m for m in all_msgs if m.has_enum_type]
         fields_used_enums = [f for f in all_fields if f.is_enum_type]
         used_enums = [f.field_type for f in fields_used_enums]
         used_enums = list(dict.fromkeys(used_enums))
+       
         print(
             "-------MESSAGE BREAKDOWN-------\nThere are {} messages, {} of them has used enum within them".format(
                 len(all_msgs), len(msgs_used_enums)
@@ -424,24 +432,28 @@ class Version_class:
                 len(fields_used_enums),
             )
         )
-
-    def parseFiles(self, changed_files):
+    
+    # if changed files are empty or None, then will process all certain files
+    def parseFiles(self, changed_files, file_types=None):
         for path in self.files:
-            if path in changed_files and os.path.exists(path):
+            if os.path.exists(path):
                 # print("path " + path)
-                try:
-                    contents = open(path).read()
-                    if path.endswith(".java"):
-                        ast = javalang.parse.parse(contents)
-                        jf = Java_file(path, ast, contents)
-                        self.java_files[path] = jf
-                        jf.parseAst()
-                    if path.endswith(".proto"):
-                        # print(path)
-                        # print(contents)
-                        ast = parser.parseString(contents)
-                        pf = Proto_file(path, ast, contents)
-                        self.proto_files[path] = pf
-                        pf.parseAst()
-                except:
-                    print("syntax error " + path)
+                if len(changed_files) == 0 or (len(changed_files) > 0 and path in changed_files):
+                    try:
+                        contents = open(path).read()
+                        if path.endswith(".java"):
+                            if (not file_types) or "java" in file_types:
+                                ast = javalang.parse.parse(contents)
+                                jf = Java_file(path, ast, contents)
+                                self.java_files[path] = jf
+                                jf.parseAst()
+                        if path.endswith(".proto"):
+                            if (not file_types) or "proto" in file_types:
+                                # print(path)
+                                # print(contents)
+                                ast = parser.parseString(contents)
+                                pf = Proto_file(path, ast, contents)
+                                self.proto_files[path] = pf
+                                pf.parseAst()
+                    except:
+                        print("syntax error " + path)
