@@ -18,6 +18,18 @@ assert p[0][2][0][1] == "3"
 assert p[0][2][1][1] == "0x1"
 assert p[0][2][2][1] == "2"
 
+test_msg = """
+message ExportRequest {
+  required Scan scan = 1;
+  required string outputPath = 2;
+  optional bool compressed = 3 [default = false];
+  optional string compressType = 4;
+  optional string compressCodec = 5;
+  optional DelegationToken fsToken = 6;
+}
+"""
+p = parser.parseString(test_msg)
+
 
 path = "../hbase/hbase-protocol-shaded/src/main/protobuf/BucketCacheEntry.proto"
 con = open(path).read()

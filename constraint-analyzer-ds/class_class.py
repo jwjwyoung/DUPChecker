@@ -4,7 +4,7 @@ from os import walk
 from javalang.tree import MethodDeclaration
 from javalang.tree import FormalParameter
 from javalang.tree import BasicType
-
+import numpy as np
 from protobuf_parser import parser
 
 
@@ -106,12 +106,8 @@ class Java_class:
 
 
 class Java_method:
-    name = ""
-    exceptions = []
-    params = []
-
     def __init__(self):
-        exceptions = []
+        self.exceptions = []
 
 
 class Proto_file:
@@ -132,16 +128,16 @@ class Proto_file:
                 pm = Proto_message(name, ast)
                 pm.parseAst()
                 self.messages[name] = pm
+                for enum_name, enum in pm.defined_enums.items():
+                    # add self defined enums within msgs to proto files
+                    key = "{}.{}".format(name, enum_name)
+                    self.enums[key] = enum
             if item[0] == "enum":
                 name = item[1]
                 ast = item[2]
-                enum = {}
-                for i in ast:
-                    if i[1].startswith("0x"):
-                        enum[i[0]] = int(i[1], 16)
-                    else:
-                        enum[i[0]] = int(i[1])
-                self.enums[name] = enum
+                pe = Proto_enum(name, ast)
+                pe.parseAst()
+                self.enums[name] = pe
 
     def compare_enums(self, old_proto_file):
         old_enums = old_proto_file.enums
@@ -285,6 +281,8 @@ class Proto_message:
         self.name = name
         self.ast = ast
         self.fields = {}
+        self.defined_enums = {}
+        self.has_enum_type = False
 
     def parseAst(self):
         for item in self.ast:
@@ -300,7 +298,39 @@ class Proto_message:
                 field_name = item[2]
                 tag_number = int(item[3])
                 pfield = Proto_field(field_type, field_name, field_qf, tag_number)
+                if len(item) >= 5:
+                    default_arr = item[4]
+                    if default_arr[0] == "default":
+                        default_value = default_arr[1]
+                        pfield.default_value = default_value
+                        # print("SET DEFAULT VALUE {}".format(default_value))
                 self.fields[field_name] = pfield
+                # check whether the field type is one of the defined enum types within this msg
+                if field_type in self.defined_enums.keys():
+                    pfield.is_enum_type = True
+                    self.has_enum_type = True
+            if item[0] == "enum":
+                name = item[1]
+                ast = item[2]
+                pe = Proto_enum(name, ast)
+                pe.parseAst()
+                enum = {}
+                self.defined_enums[name] = pe
+
+
+class Proto_enum:
+    def __init__(self, enum_name, ast):
+        self.enum_name = enum_name
+        self.ast = ast
+        self.enum = {}
+        self.is_used = False
+
+    def parseAst(self):
+        for i in self.ast:
+            if i[1].startswith("0x"):
+                self.enum[i[0]] = int(i[1], 16)
+            else:
+                self.enum[i[0]] = int(i[1])
 
 
 class Proto_field:
@@ -309,6 +339,8 @@ class Proto_field:
         self.field_type = field_type
         self.field_qf = field_qf
         self.field_name = field_name
+        self.default_value = None
+        self.is_enum_type = False
 
     def is_same(self, other_field):
         return (
@@ -350,28 +382,49 @@ class Version_class:
                     path = dirpath + "/" + filename
                     self.files.append(path)
 
-    def parseProtoFiles(self, changed_files):
-        for path in self.proto_file_paths:
-            if path in changed_files and os.path.exists(path):
-                contents = open(path).read()
-                ast = parser.parseString(contents)
-                pf = Proto_file(path, ast, contents)
-                self.proto_files.append(pf)
-                pf.parseAst()
-
     def protoOverview(self):
-        changed_files = [ f for f in self.files if f.endswith(".proto")]
+        changed_files = [f for f in self.files if f.endswith(".proto")]
         self.parseFiles(changed_files)
-        message_sum = 0
-        enum_sum = 0
+        all_fields = []
+        all_msgs = []
+        all_enums = []
         for key in self.proto_files.keys():
             pf = self.proto_files[key]
-            message_sum += len(pf.messages)
-            enum_sum += len(pf.enum)
-            
-        print("Total number of messages {}".format(message_sum))
-        print("Total number of enums {}".format(enum_sum))
+            all_msgs += pf.messages.values()
+            all_enums += pf.enums.values()
+        for msg in all_msgs:
+            all_fields += msg.fields.values()
         
+        msgs_used_enums = [m for m in all_msgs if m.has_enum_type]
+        fields_used_enums = [f for f in all_fields if f.is_enum_type]
+        used_enums = [f.field_type for f in fields_used_enums]
+        used_enums = list(dict.fromkeys(used_enums))
+        print(
+            "-------MESSAGE BREAKDOWN-------\nThere are {} messages, {} of them has used enum within them".format(
+                len(all_msgs), len(msgs_used_enums)
+            )
+        )
+        print(
+            "-------ENUM BREAKDOWN-------\nThere are {} of enums, {} of them has been used".format(
+                len(all_enums), len(used_enums)
+            )
+        )
+        # breakdown of field type
+        optional_fields = [f for f in all_fields if f.field_qf == "optional"]
+        required_fields = [f for f in all_fields if f.field_qf == "required"]
+        repeated_fields = [f for f in all_fields if f.field_qf == "repeated"]
+        default_value_fields = [f for f in all_fields if f.default_value != None]
+        print(
+            "-------FIELD BREAKDOWN-------\nThere are {} fields in total, {} are optional, {} are required, {} are repeated, {} have set default value, {} are of enum type".format(
+                len(all_fields),
+                len(optional_fields),
+                len(required_fields),
+                len(repeated_fields),
+                len(default_value_fields),
+                len(fields_used_enums),
+            )
+        )
+
     def parseFiles(self, changed_files):
         for path in self.files:
             if path in changed_files and os.path.exists(path):
