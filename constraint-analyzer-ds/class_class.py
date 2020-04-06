@@ -309,6 +309,8 @@ class Proto_message:
                 if field_type in self.defined_enums.keys():
                     pfield.is_enum_type = True
                     self.has_enum_type = True
+                    defined_enum = self.defined_enums[field_type]
+                    defined_enum.is_used = True
             if item[0] == "enum":
                 name = item[1]
                 ast = item[2]
@@ -383,8 +385,7 @@ class Version_class:
                     self.files.append(path)
 
     def protoOverview(self):
-        changed_files = [f for f in self.files if f.endswith(".proto")]
-        self.parseFiles([], ['proto'])
+        self.parseFiles([], ["proto"])
         all_fields = []
         all_msgs = []
         all_enums = []
@@ -392,7 +393,7 @@ class Version_class:
             pf = self.proto_files[key]
             all_msgs += pf.messages.values()
             all_enums += pf.enums.values()
-        
+
         all_enum_names = [e.enum_name for e in all_enums]
         for msg in all_msgs:
             all_fields += msg.fields.values()
@@ -406,10 +407,16 @@ class Version_class:
         fields_used_enums = [f for f in all_fields if f.is_enum_type]
         used_enums = [f.field_type for f in fields_used_enums]
         used_enums = list(dict.fromkeys(used_enums))
-       
+        self_defined_enums = [e for msg in all_msgs for e in msg.defined_enums.values()]
+        used_self_defined_enums = [e for e in self_defined_enums if e.is_used]
         print(
             "-------MESSAGE BREAKDOWN-------\nThere are {} messages, {} of them has used enum within them".format(
                 len(all_msgs), len(msgs_used_enums)
+            )
+        )
+        print(
+            "-------SELF DEFINED ENUMS WITHIN MESSAGES-------\nThere are {} enums defined within msgs, {} of them have been used".format(
+                len(self_defined_enums), len(used_self_defined_enums)
             )
         )
         print(
@@ -432,13 +439,15 @@ class Version_class:
                 len(fields_used_enums),
             )
         )
-    
+
     # if changed files are empty or None, then will process all certain files
     def parseFiles(self, changed_files, file_types=None):
         for path in self.files:
             if os.path.exists(path):
                 # print("path " + path)
-                if len(changed_files) == 0 or (len(changed_files) > 0 and path in changed_files):
+                if len(changed_files) == 0 or (
+                    len(changed_files) > 0 and path in changed_files
+                ):
                     try:
                         contents = open(path).read()
                         if path.endswith(".java"):
