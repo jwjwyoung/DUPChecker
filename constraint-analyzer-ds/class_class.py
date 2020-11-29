@@ -129,7 +129,7 @@ class Proto_file:
             if item[0] == "message":
                 name = item[1]
                 ast = item[2]
-                pm = Proto_message(name, ast)
+                pm = Proto_message(name, ast, self)
                 pm.parseAst()
                 self.messages[name] = pm
             if item[0] == "enum":
@@ -148,10 +148,10 @@ class Proto_file:
         new_enums = self.enums
         added_enum_keys = new_enums.keys() - old_enums.keys()
         for key in added_enum_keys:
-            print("Add Enum in Message {}: {}".format(key, new_enums[key]))
+            print("INFO Add Enum in Message {}: {}".format(key, new_enums[key]))
         deleted_enum_keys = old_enums.keys() - new_enums.keys()
         for key in deleted_enum_keys:
-            print("Delete Enum in Message {}: {}".format(key, old_enums[key]))
+            print("INFO Delete Enum in Message {}: {}".format(key, old_enums[key]))
         shared_enum_keys = new_enums.keys() - added_enum_keys
         added_field_enum_keys = []
         deleted_field_enum_keys = []
@@ -210,9 +210,9 @@ class Proto_file:
         added_field_msg_keys = []
         deleted_field_msg_keys = []
         for add_msg_key in added_msg_keys:
-            print("Added Message {}".format(add_msg_key))
+            print("INFO Added Message {}".format(add_msg_key))
         for deleted_msg_key in deleted_msg_keys:
-            print("Deleted Message {}".format(deleted_msg_key))
+            print("INFO Deleted Message {}".format(deleted_msg_key))
         for pm_name in shared_msg_keys:
             old_msg = old_msgs[pm_name]
             old_msg_fields = old_msg.fields
@@ -224,18 +224,24 @@ class Proto_file:
                 added_field_msg_keys.append(pm_name)
                 for field_name in added_field_keys:
                     field = new_msg_fields[field_name]
+                    level = "INFO"
+                    if field.field_qf == "required":
+                        level = "ERROR"
                     print(
-                        "Added Field In Message {}: {} AST: {}".format(
-                            pm_name, field_name, field.to_string()
+                        "{} Added Field In Message {}: {} AST: {} {}".format(level,
+                            pm_name, field_name, field.to_string(), old_msg.file.path
                         )
                     )
             if len(deleted_field_keys) > 0:
                 deleted_field_msg_keys.append(pm_name)
                 for field_name in deleted_field_keys:
                     field = old_msg_fields[field_name]
+                    level = 'INFO'
+                    if field.field_qf == "required":
+                        level = "ERROR"
                     print(
-                        "Deleted Field In Message #{}: {} AST: {}".format(
-                            pm_name, field_name, field.to_string()
+                        "{} Deleted Field In Message #{}: {} AST: {}".format(
+                            level, pm_name, field_name, field.to_string()
                         )
                     )
             shared_field_keys = new_msg_fields.keys() - added_field_keys
@@ -259,16 +265,26 @@ class Proto_file:
             for field_name in changed_fields:
                 field = new_msg_fields[field_name]
                 old_field = old_msg_fields[field_name]
+                level = 'INFO'
+                if old_field.field_qf != 'required' and field.field_qf == 'required':
+                    level = 'WARNING'
+                
+                if old_field.field_qf == 'required' and field.field_qf != 'required':
+                    level = 'WARNING'
+
+                if old_field.tag_number != field.tag_number:
+                    level = 'ERROR'
+
                 print(
-                    "Changed Field In Message {}: {} OLD_AST: {} NEW_AST: {}".format(
-                        pm_name, field_name, old_field.to_string(), field.to_string()
+                    "{} Changed Field In Message {}: {} OLD_AST: {} NEW_AST: {} in {}".format(
+                        level, pm_name, field_name, old_field.to_string(), field.to_string(), old_msg.file.path
                     )
                 )
-        print(
-            "deleted: {}\tadded: {}\ttchanged: {}".format(
-                len(deleted_msg_keys), len(added_msg_keys), len(changed_field_msg_keys),
-            )
-        )
+        #print(
+        #    "deleted: {}\tadded: {}\ttchanged: {}".format(
+        #        len(deleted_msg_keys), len(added_msg_keys), len(changed_field_msg_keys),
+        #    )
+        #)
         # print("am {} dm {} cfm{} afm {} dfm {}".format(len(added_msg_keys), len(deleted_msg_keys), len(changed_field_msg_keys), len(added_field_msg_keys) ,len(deleted_field_msg_keys)))
         return (
             added_msg_keys,
@@ -280,18 +296,19 @@ class Proto_file:
 
 
 class Proto_message:
-    def __init__(self, name, ast):
+    def __init__(self, name, ast, f=None):
         self.messages = {}
         self.name = name
         self.ast = ast
         self.fields = {}
+        self.file = f
 
     def parseAst(self):
         for item in self.ast:
             if item[0] == "message":
                 name = item[1]
                 ast = item[2]
-                pm = Proto_message(name, ast)
+                pm = Proto_message(name, ast, self.file)
                 self.messages[name] = pm
                 pm.parseAst()
             if item[0] in ["repeated", "optional", "required"]:

@@ -164,6 +164,8 @@ def main():
     if __name__ == "__main__":
         parser = argparse.ArgumentParser(description="Change analysis")
         parser.add_argument("--app", dest="app", help="")
+        parser.add_argument("--v1", dest='v1', help="")
+        parser.add_argument("--v2", dest='v2', help="")
         parser.add_argument(
             "--excep",
             action="store_true",
@@ -226,8 +228,13 @@ def main():
             cnt = 0
             tag_old = "YARN-5355-branch-2-2016-11-06"
             tag_new = "YARN-5355-branch-2-2017-04-25"
+            tag_old = "rel/2.2.6"
+            tag_new = "rel/2.3.3"
+            if args.v1 and args.v2:
+                tag_old = args.v1
+                tag_new = args.v2
             compare2versionsProtoFiles(tag_old, tag_new, folder)
-            # exit(0)
+            exit(0)
             results = []
             for i in range(len(tags) - 1):
                 tag_old = tags[i]
