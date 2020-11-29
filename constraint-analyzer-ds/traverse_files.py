@@ -249,9 +249,7 @@ def main():
                     )
                 )
                 proto_log_f.write("\n")
-                r_msg, r_enum = compare2versionsProtoFiles(
-                    tag_old, tag_new, folder
-                )
+                r_msg, r_enum = compare2versionsProtoFiles(tag_old, tag_new, folder)
                 results.append(r_msg + r_enum)
                 if len(proto_files) > 0:
                     cnt += 1

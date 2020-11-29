@@ -4,7 +4,7 @@ from os import walk
 from javalang.tree import MethodDeclaration
 from javalang.tree import FormalParameter
 from javalang.tree import BasicType
-
+import numpy as np
 from protobuf_parser import parser
 
 
@@ -106,12 +106,8 @@ class Java_class:
 
 
 class Java_method:
-    name = ""
-    exceptions = []
-    params = []
-
     def __init__(self):
-        exceptions = []
+        self.exceptions = []
 
 
 class Proto_file:
@@ -120,7 +116,6 @@ class Proto_file:
         self.ast = ast
         self.contents = contents
         self.messages = {}
-        self.enums = {}
 
     def parseAst(self):
         for item in self.ast:
@@ -131,17 +126,18 @@ class Proto_file:
                 ast = item[2]
                 pm = Proto_message(name, ast, self)
                 pm.parseAst()
-                self.messages[name] = pm
+                key = self.path + "_" + name
+                self.messages[key] = pm
+                for enum_name, enum in pm.defined_enums.items():
+                    # add self defined enums within msgs to proto files
+                    key = "{}.{}".format(name, enum_name)
+                    self.enums[key] = enum
             if item[0] == "enum":
                 name = item[1]
                 ast = item[2]
-                enum = {}
-                for i in ast:
-                    if i[1].startswith("0x"):
-                        enum[i[0]] = int(i[1], 16)
-                    else:
-                        enum[i[0]] = int(i[1])
-                self.enums[name] = enum
+                pe = Proto_enum(name, ast)
+                pe.parseAst()
+                self.enums[name] = pe
 
     def compare_enums(self, old_proto_file):
         old_enums = old_proto_file.enums
@@ -302,6 +298,7 @@ class Proto_message:
         self.ast = ast
         self.fields = {}
         self.file = f
+        self.defined_enums = {}
 
     def parseAst(self):
         for item in self.ast:
@@ -316,16 +313,66 @@ class Proto_message:
                 field_type = item[1]
                 field_name = item[2]
                 tag_number = int(item[3])
-                pfield = Proto_field(field_type, field_name, field_qf, tag_number)
+                pfield = Proto_field(field_type, field_name, field_qf, tag_number, self)
+                if len(item) >= 5:
+                    default_arr = item[4]
+                    if default_arr[0] == "default":
+                        default_value = default_arr[1]
+                        pfield.default_value = default_value
+                        # print("SET DEFAULT VALUE {}".format(default_value))
                 self.fields[field_name] = pfield
+            if item[0] == "enum":
+                name = item[1]
+                ast = item[2]
+                pe = Proto_enum(name, ast)
+                pe.parseAst()
+                self.defined_enums[name] = pe
+        # check whether the field type is one of the defined enum types within this msg
+        self.find_enum_type()
+
+    def find_enum_type(self):
+        for field in self.fields.values():
+            field_type = field.field_type
+            if field_type in self.defined_enums.keys():
+                self.defined_enums[field_type].is_used = True
+                field.is_enum_type = True
+                self.has_enum_type = True
+            parent_msg = self.parent
+            while(parent_msg):
+                if field_type in parent_msg.defined_enums.keys():
+                    parent_msg.defined_enums[field_type].is_used = True
+                    field.is_enum_type = True
+                    self.has_enum_type = True
+                parent_msg = parent_msg.parent
+                    
+
+            
+
+
+class Proto_enum:
+    def __init__(self, enum_name, ast):
+        self.enum_name = enum_name
+        self.ast = ast
+        self.enum = {}
+        self.is_used = False
+
+    def parseAst(self):
+        for i in self.ast:
+            if i[1].startswith("0x"):
+                self.enum[i[0]] = int(i[1], 16)
+            else:
+                self.enum[i[0]] = int(i[1])
 
 
 class Proto_field:
-    def __init__(self, field_type, field_name, field_qf, tag_number):
+    def __init__(self, field_type, field_name, field_qf, tag_number, message):
         self.tag_number = tag_number
         self.field_type = field_type
         self.field_qf = field_qf
         self.field_name = field_name
+        self.default_value = None
+        self.is_enum_type = False
+        self.message = message
 
     def is_same(self, other_field):
         return (
@@ -367,32 +414,132 @@ class Version_class:
                     path = dirpath + "/" + filename
                     self.files.append(path)
 
-    def parseProtoFiles(self, changed_files):
-        for path in self.proto_file_paths:
-            if path in changed_files and os.path.exists(path):
-                contents = open(path).read()
-                ast = parser.parseString(contents)
-                pf = Proto_file(path, ast, contents)
-                self.proto_files.append(pf)
-                pf.parseAst()
+    def protoOverview(self):
+        self.parseFiles([], ["proto"])
+        all_fields = []
+        all_msgs_dic = {}
+        outside_enums_dic = {}
+        for key in self.proto_files.keys():
+            pf = self.proto_files[key]
+            all_msgs_dic.update(pf.messages)
+            outside_enums_dic.update(pf.enums)
+        all_msgs = all_msgs_dic.values()
+        outside_enums = outside_enums_dic.values()
+        print(len(all_msgs))
+        all_all_msgs = []       
+        for msg in all_msgs:
+            all_all_msgs += self.extract_every_msgs(msg)
+        all_all_msgs += all_msgs
+        inside_enums = [e for msg in all_all_msgs for e in msg.defined_enums.values()]
+        all_enums = list(outside_enums) + inside_enums
+        for msg in all_all_msgs:
+            all_fields += msg.fields.values()
+            for field in msg.fields.values():
+                self.find_enum_type(field, all_msgs_dic, all_enums)
+                field_type = field.field_type
+                if field_type in outside_enums_dic:
+                    outside_enums_dic[field_type].is_true = True
+        print("THERE ARE {} msgs".format(len(all_all_msgs)))
 
-    def parseFiles(self, changed_files):
+        msgs_used_enums = [m for m in all_msgs if m.has_enum_type]
+        fields_used_enums = [f for f in all_fields if f.is_enum_type]
+        used_enums = [e for e in all_enums if e.is_used]
+        unused_enums = [e for e in all_enums if not e.is_used] 
+        for enum in unused_enums:
+            print(enum.enum_name)
+            os.system("grep {} --include=\"*.proto\" {} -r >> grep.log".format(enum.enum_name, self.folder))
+        print(
+            "-------MESSAGE BREAKDOWN-------\nThere are {} messages, {} of them has used enum within them".format(
+                len(all_msgs), len(msgs_used_enums)
+            )
+        )
+        print(
+            "-------SELF DEFINED ENUMS WITHIN MESSAGES-------\nThere are {} enums defined within msgs".format(
+                len(inside_enums)
+            )
+        )
+        print(
+            "-------ENUM BREAKDOWN-------\nThere are {} of enums, {} of them has been used".format(
+                len(all_enums), len(used_enums)
+            )
+        )
+        # breakdown of field type
+        optional_fields = [f for f in all_fields if f.field_qf == "optional"]
+        required_fields = [f for f in all_fields if f.field_qf == "required"]
+        repeated_fields = [f for f in all_fields if f.field_qf == "repeated"]
+        default_value_fields = [f for f in all_fields if f.default_value != None]
+        print(
+            "-------FIELD BREAKDOWN-------\nThere are {} fields in total, {} are optional, {} are required, {} are repeated, {} have set default value, {} are of enum type".format(
+                len(all_fields),
+                len(optional_fields),
+                len(required_fields),
+                len(repeated_fields),
+                len(default_value_fields),
+                len(fields_used_enums),
+            )
+        )
+    def extract_every_msgs(self, msg):
+        results = []
+        if type(msg) == Proto_message:
+            if len(msg.messages) == 0:
+                results.append(msg)
+                return results
+            for m in msg.messages.values():
+                results += self.extract_every_msgs(m)
+        return results
+
+    def find_enum_type(self, field, all_msgs, all_enums):
+        field_type = field.field_type
+        name_arr = field_type.split('.')
+        msgs = all_msgs
+        if len(name_arr) == 1:
+            enum_name = name_arr[-1]
+            if enum_name in field.message.defined_enums:
+                field.message.defined_enums[enum_name].is_used = True
+            for e in all_enums:
+                if e.enum_name == enum_name:
+                    e.is_used = True
+        if len(name_arr) >= 2:
+            enum_name = name_arr[-1]  # the last element is the name of enum
+            print("enum_name is {}".format(field_type))
+            for name in name_arr:
+                key = field.message.path + "_" + name
+                if key in msgs:
+                    message = msgs[key]
+                    if enum_name in message.defined_enums:
+                        message.defined_enums[enum_name].is_used = True
+                        field.is_enum_type = True
+                        print("ENUM type {} in {} is used in {}".format(enum_name, message.name, field_type))
+                        break
+                    else:
+                        msgs = message.messages
+                else:
+                    break
+            
+
+    # if changed files are empty or None, then will process all certain files
+    def parseFiles(self, changed_files, file_types=None):
         for path in self.files:
-            if path in changed_files and os.path.exists(path):
+            if os.path.exists(path):
                 # print("path " + path)
-                try:
-                    contents = open(path).read()
-                    if path.endswith(".java"):
-                        ast = javalang.parse.parse(contents)
-                        jf = Java_file(path, ast, contents)
-                        self.java_files[path] = jf
-                        jf.parseAst()
-                    if path.endswith(".proto"):
-                        # print(path)
-                        # print(contents)
-                        ast = parser.parseString(contents)
-                        pf = Proto_file(path, ast, contents)
-                        self.proto_files[path] = pf
-                        pf.parseAst()
-                except:
-                    print("syntax error " + path)
+                if len(changed_files) == 0 or (
+                    len(changed_files) > 0 and path in changed_files
+                ):
+                    try:
+                        contents = open(path).read()
+                        if path.endswith(".java"):
+                            if (not file_types) or "java" in file_types:
+                                ast = javalang.parse.parse(contents)
+                                jf = Java_file(path, ast, contents)
+                                self.java_files[path] = jf
+                                jf.parseAst()
+                        if path.endswith(".proto"):
+                            if (not file_types) or "proto" in file_types:
+                                # print(path)
+                                # print(contents)
+                                ast = parser.parseString(contents)
+                                pf = Proto_file(path, ast, contents)
+                                self.proto_files[path] = pf
+                                pf.parseAst()
+                    except SyntaxError:
+                        print("syntax error " + path)
