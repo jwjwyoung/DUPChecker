@@ -235,6 +235,8 @@ def main():
             file_type.append("thrift")
 
         if len(file_type) > 0:
+            if not os.path.exists("log/"):
+                os.system("mkdir log")
             proto_log_fn = "log/" + "proto_change_" + app_name + ".log"
             proto_log_f = open(proto_log_fn, "w")
             cnt = 0
