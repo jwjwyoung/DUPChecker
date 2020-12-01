@@ -35,22 +35,22 @@ def extract_proto_change(tag_old, tag_new, folder):
     proto_contents = []
     for i in range(len(changed_files)):
         f = changed_files[i]
-        if f.endswith(".proto"):
+        if f.endswith(".proto") or f.endswith(".thrift"):
             fc = changed_contents[i]
             proto_files.append(f)
             proto_contents.append("\n".join(fc))
     return proto_files, proto_contents
 
 
-def compare2versionsProtoFiles(tag_old, tag_new, folder):
+def compare2versionsProtoFiles(tag_old, tag_new, folder, file_type=None):
     v_old = Version_class(folder, tag_old)
     v_new = Version_class(folder, tag_new)
     proto_files, proto_contents = extract_proto_change(tag_old, tag_new, folder)
     v_old.build()
-    v_old.parseFiles(proto_files)
+    v_old.parseFiles(proto_files, file_type)
     old_proto_files = v_old.proto_files
     v_new.build()
-    v_new.parseFiles(proto_files)
+    v_new.parseFiles(proto_files, file_type)
     new_proto_files = v_new.proto_files
     added_proto_file_keys = new_proto_files.keys() - old_proto_files.keys()
     deleted_proto_file_keys = old_proto_files.keys() - new_proto_files.keys()
@@ -73,15 +73,15 @@ def compare2versionsProtoFiles(tag_old, tag_new, folder):
     return r_msg, r_enum
 
 
-def compare2versionsJavaFiles(tag_old, tag_new, folder):
+def compare2versionsJavaFiles(tag_old, tag_new, folder, file_type=None):
     v_old = Version_class(folder, tag_old)
     v_new = Version_class(folder, tag_new)
     changed_files, changed_contents = getChangedFiles(tag_old, tag_new, folder)
     changed_files = getJavaFiles(changed_files)
     v_old.build()
-    v_old.parseFiles(changed_files)
+    v_old.parseFiles(changed_files, file_type)
     v_new.build()
-    v_new.parseFiles(changed_files)
+    v_new.parseFiles(changed_files, file_type)
     add_cnt = 0
     delete_cnt = 0
     change_cnt = 0
@@ -181,12 +181,18 @@ def main():
             action="store_true",
             help="choose whether you want the data of protofiles",
         )
+        parser.add_argument(
+            "--thrift",
+            action="store_true",
+            help="choose whether you want the data of protofiles",
+        )
 
         args = parser.parse_args()
         ce = args.excep
         print(ce)
         sf = args.serialize
         proto = args.proto
+        thrift = args.thrift
         folder = "../hbase"
         regex_str = "[0-9]*\.[0-9]*\.[0-9]*\.*RC"
         if args.app:
@@ -222,7 +228,13 @@ def main():
                         if "serialize" in method_name:
                             cnt += 1
             print(cnt)
+        file_type = []
         if proto:
+            file_type.append("proto")
+        if thrift:
+            file_type.append("thrift")
+
+        if len(file_type) > 0:
             proto_log_fn = "log/" + "proto_change_" + app_name + ".log"
             proto_log_f = open(proto_log_fn, "w")
             cnt = 0
@@ -233,7 +245,7 @@ def main():
             if args.v1 and args.v2:
                 tag_old = args.v1
                 tag_new = args.v2
-            compare2versionsProtoFiles(tag_old, tag_new, folder)
+            compare2versionsProtoFiles(tag_old, tag_new, folder, file_type)
             exit(0)
             results = []
             for i in range(len(tags) - 1):

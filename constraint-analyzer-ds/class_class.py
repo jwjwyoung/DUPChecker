@@ -6,7 +6,7 @@ from javalang.tree import FormalParameter
 from javalang.tree import BasicType
 import numpy as np
 from protobuf_parser import parser
-
+from thrift_parser import thrift_parser
 
 class Java_file:
     def __init__(self, path, ast, contents):
@@ -116,6 +116,7 @@ class Proto_file:
         self.ast = ast
         self.contents = contents
         self.messages = {}
+        self.enums = {}
 
     def parseAst(self):
         for item in self.ast:
@@ -126,18 +127,24 @@ class Proto_file:
                 ast = item[2]
                 pm = Proto_message(name, ast, self)
                 pm.parseAst()
-                key = self.path + "_" + name
-                self.messages[key] = pm
-                for enum_name, enum in pm.defined_enums.items():
-                    # add self defined enums within msgs to proto files
-                    key = "{}.{}".format(name, enum_name)
-                    self.enums[key] = enum
+                self.messages[name] = pm
             if item[0] == "enum":
                 name = item[1]
                 ast = item[2]
-                pe = Proto_enum(name, ast)
-                pe.parseAst()
-                self.enums[name] = pe
+                enum = {}
+                for i in ast:
+                    if i[1].startswith("0x"):
+                        enum[i[0]] = int(i[1], 16)
+                    else:
+                        enum[i[0]] = int(i[1])
+                self.enums[name] = enum
+            if item[0] == "struct":
+                name = item[1]
+                ast = item[2]
+                pm = Proto_message(name, ast, self)
+                pm.parseThriftAst()
+                self.messages[name] = pm
+
 
     def compare_enums(self, old_proto_file):
         old_enums = old_proto_file.enums
@@ -298,6 +305,7 @@ class Proto_message:
         self.ast = ast
         self.fields = {}
         self.file = f
+        self.parent = None
         self.defined_enums = {}
 
     def parseAst(self):
@@ -321,15 +329,40 @@ class Proto_message:
                         pfield.default_value = default_value
                         # print("SET DEFAULT VALUE {}".format(default_value))
                 self.fields[field_name] = pfield
-            if item[0] == "enum":
-                name = item[1]
-                ast = item[2]
-                pe = Proto_enum(name, ast)
-                pe.parseAst()
-                self.defined_enums[name] = pe
-        # check whether the field type is one of the defined enum types within this msg
-        self.find_enum_type()
 
+    def parseThriftAst(self):
+        for item in self.ast:
+            if item[0].isdigit():
+                tag_number = int(item[0])
+                if item[1] in ['optional', 'required']:
+                    field_qf = item[1]
+                    index = 2
+                else:
+                    field_qf = 'default'
+                    index = 1
+                #print("type", type(item[index]), item[index])
+                if type(item[index]) == str:
+                    field_type = item[index]
+                    index += 1
+                else:
+                    t = item[index][0]
+                    #print("t ", t)
+                    if t == 'set':
+                        field_type = "set<" + item[index + 1] + ">"
+                        index += 2
+                    elif t == "list":
+                        field_type = "list<" + item[index + 1] + ">"
+                        index += 2 
+                    elif t == "map":
+                        field_type = "map<" + item[index + 1] + ", " + item[index + 2] + ">"
+                        index += 3
+                field_name = item[index]
+                # if field_name == 'Text':
+                #     print("FIELD_NAME", field_name, field_type, field_qf, self.ast)
+                #     exit()
+                pfield = Proto_field(field_type, field_name, field_qf, tag_number, self)
+                self.fields[field_name] = pfield
+                
     def find_enum_type(self):
         for field in self.fields.values():
             field_type = field.field_type
@@ -410,6 +443,10 @@ class Version_class:
                     path = dirpath + "/" + filename
                     self.files.append(path)
                 if filename.endswith(".proto"):
+                    class_name = filename[0:-6]
+                    path = dirpath + "/" + filename
+                    self.files.append(path)
+                if filename.endswith(".thrift"):
                     class_name = filename[0:-6]
                     path = dirpath + "/" + filename
                     self.files.append(path)
@@ -524,22 +561,32 @@ class Version_class:
                 # print("path " + path)
                 if len(changed_files) == 0 or (
                     len(changed_files) > 0 and path in changed_files
-                ):
+                ):  
                     try:
                         contents = open(path).read()
-                        if path.endswith(".java"):
-                            if (not file_types) or "java" in file_types:
-                                ast = javalang.parse.parse(contents)
-                                jf = Java_file(path, ast, contents)
-                                self.java_files[path] = jf
-                                jf.parseAst()
+                        # if path.endswith(".java"):
+                        #     if (not file_types) or "java" in file_types:
+                        #         ast = javalang.parse.parse(contents)
+                        #         jf = Java_file(path, ast, contents)
+                        #         self.java_files[path] = jf
+                        #         jf.parseAst()
                         if path.endswith(".proto"):
                             if (not file_types) or "proto" in file_types:
                                 # print(path)
                                 # print(contents)
-                                ast = parser.parseString(contents)
-                                pf = Proto_file(path, ast, contents)
-                                self.proto_files[path] = pf
-                                pf.parseAst()
+                                try:
+                                    ast = parser.parseString(contents)
+                                    pf = Proto_file(path, ast, contents)
+                                    self.proto_files[path] = pf
+                                    pf.parseAst()
+                                except:
+                                    pass
+                        if path.endswith(".thrift"):
+                            contents = contents.replace(" 0x", " x")
+                            ast = thrift_parser.parseString(contents)
+                            pf = Proto_file(path, ast, contents)
+                            self.proto_files[path] = pf
+                            pf.parseAst()
+                            #print("THRIFT ast", ast)
                     except SyntaxError:
                         print("syntax error " + path)
