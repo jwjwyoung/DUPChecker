@@ -1,0 +1,567 @@
+False
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/proto/test_client_tokens.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/LocalizationProtocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/proto/test_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/main/proto/yarn_server_timelineserver_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/collectornodemanager_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/SCMUploader.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/distributed_scheduling_am_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/ResourceTracker.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_federation_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationmaster_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/client_SCM_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/application_history_client.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/application_history_server.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/SCM_Admin_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/src/test/proto/test_amrm_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/src/main/proto/ClientAMProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ProtobufRpcEngine.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/FSProtos.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshCallQueueProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/HAServiceProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/TraceAdmin.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ZKFCProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/IpcConnectionContext.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshUserMappingsProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/GetUserMappingsProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/Security.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ProtocolInfo.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshAuthorizationPolicyProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/GenericRefreshProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/erasurecoding.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/xattr.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ReconfigurationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/RouterProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/JournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/AliasMapProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/editlog.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterQJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeLifelineProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HAZKInfo.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_service_protos.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/HSAdminRefreshProtocol.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/MRClientProtocol.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/src/main/proto/ShuffleHandlerRecovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/proto/test_client_tokens.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/LocalizationProtocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/proto/test_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/main/proto/yarn_server_timelineserver_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/collectornodemanager_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/SCMUploader.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/distributed_scheduling_am_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/ResourceTracker.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_federation_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationmaster_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/YarnCsiAdaptor.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/client_SCM_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/application_history_client.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_csi_adaptor.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/application_history_server.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/SCM_Admin_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/src/test/proto/test_amrm_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-csi/src/main/proto/csi.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/src/main/proto/ClientAMProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ProtobufRpcEngine.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/FSProtos.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshCallQueueProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/HAServiceProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/TraceAdmin.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ZKFCProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/IpcConnectionContext.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshUserMappingsProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/GetUserMappingsProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/Security.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ProtocolInfo.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RefreshAuthorizationPolicyProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/ProtobufRpcEngine2.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/GenericRefreshProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/erasurecoding.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/xattr.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ReconfigurationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/RouterProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/JournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/AliasMapProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/editlog.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterQJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeLifelineProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HAZKInfo.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_service_protos.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/HSAdminRefreshProtocol.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/MRClientProtocol.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/src/main/proto/ShuffleHandlerRecovery.proto
+INFO Deleted Message RemoveErasureCodingPolicyRequestProto
+INFO Deleted Message BlockECReconstructionInfoProto
+INFO Deleted Message EnableErasureCodingPolicyRequestProto
+INFO Deleted Message AddErasureCodingPoliciesResponseProto
+INFO Deleted Message GetErasureCodingPolicyRequestProto
+INFO Deleted Message GetErasureCodingPoliciesResponseProto
+INFO Deleted Message UnsetErasureCodingPolicyResponseProto
+INFO Deleted Message SetErasureCodingPolicyResponseProto
+INFO Deleted Message SetErasureCodingPolicyRequestProto
+INFO Deleted Message RemoveErasureCodingPolicyResponseProto
+INFO Deleted Message GetErasureCodingPoliciesRequestProto
+INFO Deleted Message CodecProto
+INFO Deleted Message GetErasureCodingPolicyResponseProto
+INFO Deleted Message DisableErasureCodingPolicyRequestProto
+INFO Deleted Message UnsetErasureCodingPolicyRequestProto
+INFO Deleted Message AddErasureCodingPoliciesRequestProto
+INFO Deleted Message GetErasureCodingCodecsResponseProto
+INFO Deleted Message EnableErasureCodingPolicyResponseProto
+INFO Deleted Message DisableErasureCodingPolicyResponseProto
+INFO Deleted Message GetErasureCodingCodecsRequestProto
+INFO Added Message RestartServiceResponseProto
+INFO Added Message CancelUpgradeRequestProto
+INFO Added Message CancelUpgradeResponseProto
+INFO Added Message CompInstancesUpgradeResponseProto
+INFO Added Message CompInstancesUpgradeRequestProto
+INFO Added Message DecommissionCompInstancesRequestProto
+INFO Added Message UpgradeServiceResponseProto
+INFO Added Message UpgradeServiceRequestProto
+INFO Added Message GetCompInstancesRequestProto
+INFO Added Message DecommissionCompInstancesResponseProto
+INFO Added Message GetCompInstancesResponseProto
+INFO Added Message RestartServiceRequestProto
+INFO Added Message GetNextSPSPathRequestProto
+INFO Added Message GetNextSPSPathResponseProto
+INFO Added Message GetFilePathRequestProto
+INFO Added Message GetFilePathResponseProto
+INFO Deleted Message GetXAttrsRequestProto
+INFO Deleted Message ListXAttrsRequestProto
+INFO Deleted Message ListXAttrsResponseProto
+INFO Deleted Message XAttrProto
+INFO Deleted Message SetXAttrResponseProto
+INFO Deleted Message GetXAttrsResponseProto
+INFO Deleted Message RemoveXAttrResponseProto
+INFO Deleted Message RemoveXAttrRequestProto
+INFO Deleted Message SetXAttrRequestProto
+INFO Delete Enum in Message XAttrSetFlagProto: {'XATTR_CREATE': 1, 'XATTR_REPLACE': 2}
+INFO Deleted Message DiskBalancerSettingRequestProto
+INFO Deleted Message CancelPlanRequestProto
+INFO Deleted Message DiskBalancerSettingResponseProto
+INFO Deleted Message ShutdownDatanodeResponseProto
+INFO Deleted Message TriggerBlockReportResponseProto
+INFO Deleted Message GetDatanodeInfoRequestProto
+INFO Deleted Message GetBlockLocalPathInfoRequestProto
+INFO Deleted Message RefreshNamenodesRequestProto
+INFO Deleted Message SubmitDiskBalancerPlanRequestProto
+INFO Deleted Message RefreshNamenodesResponseProto
+INFO Deleted Message EvictWritersResponseProto
+INFO Deleted Message GetVolumeReportRequestProto
+INFO Deleted Message GetReplicaVisibleLengthRequestProto
+INFO Deleted Message GetBalancerBandwidthRequestProto
+INFO Deleted Message DeleteBlockPoolRequestProto
+INFO Deleted Message QueryPlanStatusResponseProto
+INFO Deleted Message GetReplicaVisibleLengthResponseProto
+INFO Deleted Message EvictWritersRequestProto
+INFO Deleted Message QueryPlanStatusRequestProto
+INFO Deleted Message SubmitDiskBalancerPlanResponseProto
+INFO Deleted Message GetBalancerBandwidthResponseProto
+INFO Deleted Message GetDatanodeInfoResponseProto
+INFO Deleted Message CancelPlanResponseProto
+INFO Deleted Message GetVolumeReportResponseProto
+INFO Deleted Message ShutdownDatanodeRequestProto
+INFO Deleted Message TriggerBlockReportRequestProto
+INFO Deleted Message GetBlockLocalPathInfoResponseProto
+INFO Deleted Message DeleteBlockPoolResponseProto
+INFO Deleted Message UnsetStoragePolicyRequestProto
+INFO Deleted Message AddCacheDirectiveResponseProto
+INFO Deleted Message UpdatePipelineResponseProto
+INFO Deleted Message RenameResponseProto
+INFO Deleted Message GetFsReplicatedBlockStatsResponseProto
+INFO Deleted Message DeleteRequestProto
+INFO Deleted Message CheckAccessResponseProto
+INFO Deleted Message ListCorruptFileBlocksRequestProto
+INFO Deleted Message ListCorruptFileBlocksResponseProto
+INFO Deleted Message DeleteSnapshotRequestProto
+INFO Deleted Message Rename2RequestProto
+INFO Deleted Message DeleteResponseProto
+INFO Deleted Message SetStoragePolicyRequestProto
+INFO Deleted Message MetaSaveRequestProto
+INFO Deleted Message AbandonBlockRequestProto
+INFO Deleted Message RemoveCacheDirectiveRequestProto
+INFO Deleted Message AllowSnapshotRequestProto
+INFO Deleted Message GetContentSummaryRequestProto
+INFO Deleted Message GetDatanodeReportResponseProto
+INFO Deleted Message RestoreFailedStorageRequestProto
+INFO Deleted Message RollEditsResponseProto
+INFO Deleted Message ConcatRequestProto
+INFO Deleted Message GetDatanodeReportRequestProto
+INFO Deleted Message GetLocatedFileInfoRequestProto
+INFO Deleted Message AddCachePoolResponseProto
+INFO Deleted Message GetFileLinkInfoRequestProto
+INFO Deleted Message DisallowSnapshotResponseProto
+INFO Deleted Message GetServerDefaultsRequestProto
+INFO Deleted Message CompleteRequestProto
+INFO Deleted Message DeleteSnapshotResponseProto
+INFO Deleted Message GetDataEncryptionKeyResponseProto
+INFO Deleted Message RenameSnapshotResponseProto
+INFO Deleted Message AbandonBlockResponseProto
+INFO Deleted Message GetDatanodeStorageReportRequestProto
+INFO Deleted Message SetQuotaResponseProto
+INFO Deleted Message GetFsReplicatedBlockStatsRequestProto
+INFO Deleted Message GetBlockLocationsRequestProto
+INFO Deleted Message AddCachePoolRequestProto
+INFO Deleted Message AppendResponseProto
+INFO Deleted Message RecoverLeaseRequestProto
+INFO Deleted Message CreateSnapshotResponseProto
+INFO Deleted Message SetPermissionRequestProto
+INFO Deleted Message GetStoragePolicyRequestProto
+INFO Deleted Message ListOpenFilesRequestProto
+INFO Deleted Message RollingUpgradeRequestProto
+INFO Deleted Message ListCachePoolsResponseProto
+INFO Deleted Message RollEditsRequestProto
+INFO Deleted Message RecoverLeaseResponseProto
+INFO Deleted Message IsFileClosedResponseProto
+INFO Deleted Message RollingUpgradeResponseProto
+INFO Deleted Message GetEditsFromTxidResponseProto
+INFO Deleted Message ListOpenFilesResponseProto
+INFO Deleted Message RenameRequestProto
+INFO Deleted Message SaveNamespaceResponseProto
+INFO Deleted Message GetCurrentEditLogTxidResponseProto
+INFO Deleted Message GetFileLinkInfoResponseProto
+INFO Deleted Message UnsetStoragePolicyResponseProto
+INFO Deleted Message ReportBadBlocksRequestProto
+INFO Deleted Message GetPreferredBlockSizeRequestProto
+INFO Deleted Message CacheDirectiveEntryProto
+INFO Deleted Message AddBlockRequestProto
+INFO Deleted Message CacheDirectiveInfoProto
+INFO Deleted Message CachePoolInfoProto
+INFO Deleted Message SetBalancerBandwidthRequestProto
+INFO Deleted Message SetOwnerRequestProto
+INFO Deleted Message SetReplicationResponseProto
+INFO Deleted Message SetPermissionResponseProto
+INFO Deleted Message GetQuotaUsageResponseProto
+INFO Deleted Message GetSnapshotDiffReportRequestProto
+INFO Deleted Message GetStoragePoliciesRequestProto
+INFO Deleted Message CreateResponseProto
+INFO Deleted Message GetFsECBlockGroupStatsResponseProto
+INFO Deleted Message GetListingRequestProto
+INFO Deleted Message SetBalancerBandwidthResponseProto
+INFO Deleted Message ModifyCacheDirectiveResponseProto
+INFO Deleted Message GetAdditionalDatanodeRequestProto
+INFO Deleted Message AllowSnapshotResponseProto
+INFO Deleted Message CheckAccessRequestProto
+INFO Deleted Message FsyncResponseProto
+INFO Deleted Message CacheDirectiveInfoExpirationProto
+INFO Deleted Message CreateSymlinkRequestProto
+INFO Deleted Message CreateRequestProto
+INFO Deleted Message GetPreferredBlockSizeResponseProto
+INFO Deleted Message Rename2ResponseProto
+INFO Deleted Message AddCacheDirectiveRequestProto
+INFO Deleted Message GetFileInfoRequestProto
+INFO Deleted Message SetTimesResponseProto
+INFO Deleted Message GetSnapshotDiffReportResponseProto
+INFO Deleted Message AppendRequestProto
+INFO Deleted Message OpenFilesBatchResponseProto
+INFO Deleted Message GetSnapshotDiffReportListingRequestProto
+INFO Deleted Message ConcatResponseProto
+INFO Deleted Message RemoveCacheDirectiveResponseProto
+INFO Deleted Message GetDatanodeStorageReportResponseProto
+INFO Deleted Message GetFsStatusRequestProto
+INFO Deleted Message RenewLeaseResponseProto
+INFO Deleted Message MkdirsResponseProto
+INFO Deleted Message SetSafeModeResponseProto
+INFO Deleted Message TruncateResponseProto
+INFO Deleted Message RenewLeaseRequestProto
+INFO Deleted Message TruncateRequestProto
+INFO Deleted Message FsyncRequestProto
+INFO Deleted Message ModifyCacheDirectiveRequestProto
+INFO Deleted Message ListCachePoolsRequestProto
+INFO Deleted Message GetQuotaUsageRequestProto
+INFO Deleted Message CachePoolEntryProto
+INFO Deleted Message GetStoragePoliciesResponseProto
+INFO Deleted Message MkdirsRequestProto
+INFO Deleted Message GetSnapshottableDirListingResponseProto
+INFO Deleted Message GetBlockLocationsResponseProto
+INFO Deleted Message SetReplicationRequestProto
+INFO Deleted Message GetSnapshottableDirListingRequestProto
+INFO Deleted Message FinalizeUpgradeResponseProto
+INFO Deleted Message GetEditsFromTxidRequestProto
+INFO Deleted Message GetListingResponseProto
+INFO Deleted Message GetStoragePolicyResponseProto
+INFO Deleted Message SetSafeModeRequestProto
+INFO Deleted Message ModifyCachePoolResponseProto
+INFO Deleted Message FinalizeUpgradeRequestProto
+INFO Deleted Message SetOwnerResponseProto
+INFO Deleted Message UpdateBlockForPipelineResponseProto
+INFO Deleted Message IsFileClosedRequestProto
+INFO Deleted Message GetLinkTargetResponseProto
+INFO Deleted Message DisallowSnapshotRequestProto
+INFO Deleted Message RestoreFailedStorageResponseProto
+INFO Deleted Message ModifyCachePoolRequestProto
+INFO Deleted Message GetFsStatsResponseProto
+INFO Deleted Message ReportBadBlocksResponseProto
+INFO Deleted Message RemoveCachePoolRequestProto
+INFO Deleted Message DatanodeStorageReportProto
+INFO Deleted Message CompleteResponseProto
+INFO Deleted Message RefreshNodesRequestProto
+INFO Deleted Message SetQuotaRequestProto
+INFO Deleted Message GetLinkTargetRequestProto
+INFO Deleted Message GetContentSummaryResponseProto
+INFO Deleted Message CreateSymlinkResponseProto
+INFO Deleted Message RenameSnapshotRequestProto
+INFO Deleted Message GetLocatedFileInfoResponseProto
+INFO Deleted Message GetDataEncryptionKeyRequestProto
+INFO Deleted Message SetTimesRequestProto
+INFO Deleted Message ListCacheDirectivesResponseProto
+INFO Deleted Message UpdatePipelineRequestProto
+INFO Deleted Message CacheDirectiveStatsProto
+INFO Deleted Message ListCacheDirectivesRequestProto
+INFO Deleted Message CreateSnapshotRequestProto
+INFO Deleted Message GetCurrentEditLogTxidRequestProto
+INFO Deleted Message UpdateBlockForPipelineRequestProto
+INFO Deleted Message AddBlockResponseProto
+INFO Deleted Message SaveNamespaceRequestProto
+INFO Deleted Message GetAdditionalDatanodeResponseProto
+INFO Deleted Message RefreshNodesResponseProto
+INFO Deleted Message SetStoragePolicyResponseProto
+INFO Deleted Message RemoveCachePoolResponseProto
+INFO Deleted Message GetSnapshotDiffReportListingResponseProto
+INFO Deleted Message GetFsECBlockGroupStatsRequestProto
+INFO Deleted Message MetaSaveResponseProto
+INFO Deleted Message GetServerDefaultsResponseProto
+INFO Deleted Message RollingUpgradeInfoProto
+INFO Deleted Message CachePoolStatsProto
+INFO Deleted Message GetFileInfoResponseProto
+INFO Delete Enum in Message CacheFlagProto: {'FORCE': 1}
+INFO Delete Enum in Message SafeModeActionProto: {'SAFEMODE_LEAVE': 1, 'SAFEMODE_ENTER': 2, 'SAFEMODE_FORCE_EXIT': 4, 'SAFEMODE_GET': 3}
+INFO Delete Enum in Message CreateFlagProto: {'LAZY_PERSIST': 16, 'APPEND': 4, 'NEW_BLOCK': 32, 'OVERWRITE': 2, 'CREATE': 1, 'SHOULD_REPLICATE': 128}
+INFO Delete Enum in Message AddBlockFlagProto: {'NO_LOCAL_WRITE': 1}
+INFO Delete Enum in Message OpenFilesTypeProto: {'ALL_OPEN_FILES': 1, 'BLOCKING_DECOMMISSION': 2}
+INFO Delete Enum in Message RollingUpgradeActionProto: {'START': 2, 'QUERY': 1, 'FINALIZE': 3}
+INFO Delete Enum in Message DatanodeReportTypeProto: {'ALL': 1, 'DEAD': 3, 'IN_MAINTENANCE': 6, 'ENTERING_MAINTENANCE': 5, 'DECOMMISSIONING': 4, 'LIVE': 2}
+INFO Added Message NodesToAttributesMappingResponseProto
+INFO Added Message NodesToAttributesMappingRequestProto
+INFO Add Enum in Message AttributeMappingOperationTypeProto: {'REPLACE': 1, 'REMOVE': 3, 'ADD': 2}
+INFO Deleted Message RemoveAclRequestProto
+INFO Deleted Message SetAclRequestProto
+INFO Deleted Message RemoveAclEntriesResponseProto
+INFO Deleted Message GetAclStatusRequestProto
+INFO Deleted Message FsPermissionProto
+INFO Deleted Message ModifyAclEntriesRequestProto
+INFO Deleted Message RemoveDefaultAclRequestProto
+INFO Deleted Message RemoveAclResponseProto
+INFO Deleted Message RemoveAclEntriesRequestProto
+INFO Deleted Message ModifyAclEntriesResponseProto
+INFO Deleted Message GetAclStatusResponseProto
+INFO Deleted Message SetAclResponseProto
+INFO Deleted Message AclEntryProto
+INFO Deleted Message RemoveDefaultAclResponseProto
+INFO Deleted Message AclStatusProto
+INFO Added Message GetDisabledNameservicesRequestProto
+INFO Added Message RefreshSuperUserGroupsConfigurationRequestProto
+INFO Added Message DisableNameserviceResponseProto
+INFO Added Message GetDestinationResponseProto
+INFO Added Message DisabledNameserviceRecordProto
+INFO Added Message GetDisabledNameservicesResponseProto
+INFO Added Message EnableNameserviceRequestProto
+INFO Added Message RefreshSuperUserGroupsConfigurationResponseProto
+INFO Added Message EnableNameserviceResponseProto
+INFO Added Message RefreshMountTableEntriesRequestProto
+INFO Added Message GetDestinationRequestProto
+INFO Added Message RefreshMountTableEntriesResponseProto
+INFO Added Message DisableNameserviceRequestProto
+INFO Added Field In Message RouterRecordProto: adminAddress AST: optional string adminAddress = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message NamenodeMembershipRecordProto: webScheme AST: optional string webScheme = 16 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message NamenodeMembershipStatsRecordProto: numOfInMaintenanceDeadDataNodes AST: optional uint32 numOfInMaintenanceDeadDataNodes = 27 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message NamenodeMembershipStatsRecordProto: numOfEnteringMaintenanceDataNodes AST: optional uint32 numOfEnteringMaintenanceDataNodes = 28 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message NamenodeMembershipStatsRecordProto: numOfInMaintenanceLiveDataNodes AST: optional uint32 numOfInMaintenanceLiveDataNodes = 26 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message NamenodeMembershipStatsRecordProto: numOfStaleDatanodes AST: optional uint32 numOfStaleDatanodes = 25 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Field In Message MountTableRecordProto: faultTolerant AST: optional bool faultTolerant = 14 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+INFO Added Message GetLocalizationStatusesRequestProto
+INFO Added Message GetClusterNodeAttributesResponseProto
+INFO Added Message GetNodesToAttributesRequestProto
+INFO Added Message LocalizationStatusProto
+INFO Added Message GetLocalizationStatusesResponseProto
+INFO Added Message GetAttributesToNodesRequestProto
+INFO Added Message GetClusterNodeAttributesRequestProto
+INFO Added Message ContainerLocalizationStatusesProto
+INFO Added Message GetAttributesToNodesResponseProto
+INFO Added Message GetNodesToAttributesResponseProto
+INFO Added Field In Message AllocateRequestProto: tracking_url AST: optional string tracking_url = 11 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message GetApplicationsRequestProto: name AST: optional string name = 12 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Add Enum in Message LocalizationStateProto: {'L_PENDING': 1, 'L_FAILED': 3, 'L_COMPLETED': 2}
+INFO Deleted Message StartReconfigurationRequestProto
+INFO Deleted Message ListReconfigurablePropertiesRequestProto
+INFO Deleted Message GetReconfigurationStatusConfigChangeProto
+INFO Deleted Message StartReconfigurationResponseProto
+INFO Deleted Message GetReconfigurationStatusResponseProto
+INFO Deleted Message GetReconfigurationStatusRequestProto
+INFO Deleted Message ListReconfigurablePropertiesResponseProto
+INFO Added Message LocalFileSystemPathHandleProto
+INFO Added Message GetJournaledEditsResponseProto
+INFO Added Message GetJournaledEditsRequestProto
+INFO Added Field In Message FormatRequestProto: force AST: optional bool force = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Message TransitionToObserverResponseProto
+INFO Added Message TransitionToObserverRequestProto
+Add Field in Enum HAServiceStateProto Key: OBSERVER Value 3
+INFO Deleted Message ContentSummaryProto
+INFO Deleted Message DatanodeInfoProto
+INFO Deleted Message DirectoryListingProto
+INFO Deleted Message CorruptFileBlocksProto
+INFO Deleted Message ExtendedBlockProto
+INFO Deleted Message ZoneEncryptionInfoProto
+INFO Deleted Message HdfsPathHandleProto
+INFO Deleted Message ECSchemaOptionEntryProto
+INFO Deleted Message RollingUpgradeStatusProto
+INFO Deleted Message SnapshotDiffReportCursorProto
+INFO Deleted Message LocatedBlocksProto
+INFO Deleted Message DatanodeIDProto
+INFO Deleted Message DatanodeStorageProto
+INFO Deleted Message DatanodeVolumeInfoProto
+INFO Deleted Message SnapshotDiffReportListingProto
+INFO Deleted Message SnapshotDiffReportProto
+INFO Deleted Message StorageTypeQuotaInfoProto
+INFO Deleted Message BlockTokenSecretProto
+INFO Deleted Message FsServerDefaultsProto
+INFO Deleted Message ReencryptionInfoProto
+INFO Deleted Message FileEncryptionInfoProto
+INFO Deleted Message HdfsFileStatusProto
+INFO Deleted Message ErasureCodingPolicyProto
+INFO Deleted Message CipherOptionProto
+INFO Deleted Message ProvidedStorageLocationProto
+INFO Deleted Message StorageTypeQuotaInfosProto
+INFO Deleted Message ECSchemaProto
+INFO Deleted Message StorageUuidsProto
+INFO Deleted Message SnapshottableDirectoryListingProto
+INFO Deleted Message DataEncryptionKeyProto
+INFO Deleted Message SnapshottableDirectoryStatusProto
+INFO Deleted Message QuotaUsageProto
+INFO Deleted Message DatanodeInfosProto
+INFO Deleted Message SnapshotInfoProto
+INFO Deleted Message StorageReportProto
+INFO Deleted Message PerFileEncryptionInfoProto
+INFO Deleted Message AddErasureCodingPolicyResponseProto
+INFO Deleted Message StorageTypesProto
+INFO Deleted Message BlockProto
+INFO Deleted Message BlockStoragePolicyProto
+INFO Deleted Message SnapshotDiffReportListingEntryProto
+INFO Deleted Message SnapshotDiffReportEntryProto
+INFO Deleted Message DatanodeLocalInfoProto
+INFO Deleted Message LocatedBlockProto
+INFO Delete Enum in Message CipherSuiteProto: {'AES_CTR_NOPADDING': 2, 'UNKNOWN': 1}
+INFO Delete Enum in Message AccessModeProto: {'REPLACE': 4, 'COPY': 3, 'READ': 1, 'WRITE': 2}
+INFO Delete Enum in Message BlockTypeProto: {'STRIPED': 1, 'CONTIGUOUS': 0}
+INFO Delete Enum in Message ErasureCodingPolicyState: {'REMOVED': 3, 'DISABLED': 1, 'ENABLED': 2}
+INFO Delete Enum in Message StorageTypeProto: {'RAM_DISK': 4, 'PROVIDED': 5, 'ARCHIVE': 3, 'SSD': 2, 'DISK': 1}
+INFO Delete Enum in Message CryptoProtocolVersionProto: {'UNKNOWN_PROTOCOL_VERSION': 1, 'ENCRYPTION_ZONES': 2}
+INFO Delete Enum in Message ChecksumTypeProto: {'CHECKSUM_CRC32C': 2, 'CHECKSUM_NULL': 0, 'CHECKSUM_CRC32': 1}
+INFO Deleted Message ListEncryptionZonesRequestProto
+INFO Deleted Message ReencryptEncryptionZoneRequestProto
+INFO Deleted Message GetEZForPathRequestProto
+INFO Deleted Message EncryptionZoneProto
+INFO Deleted Message GetEZForPathResponseProto
+INFO Deleted Message ListReencryptionStatusResponseProto
+INFO Deleted Message ListEncryptionZonesResponseProto
+INFO Deleted Message ReencryptEncryptionZoneResponseProto
+INFO Deleted Message CreateEncryptionZoneResponseProto
+INFO Deleted Message CreateEncryptionZoneRequestProto
+INFO Deleted Message ZoneReencryptionStatusProto
+INFO Deleted Message ListReencryptionStatusRequestProto
+INFO Delete Enum in Message ReencryptionStateProto: {'PROCESSING': 2, 'SUBMITTED': 1, 'COMPLETED': 3}
+INFO Delete Enum in Message ReencryptActionProto: {'START_REENCRYPT': 2, 'CANCEL_REENCRYPT': 1}
+INFO Deleted Message OpReadBlockProto
+INFO Deleted Message CachingStrategyProto
+INFO Deleted Message OpWriteBlockProto
+INFO Deleted Message ShortCircuitShmSlotProto
+INFO Deleted Message OpCopyBlockProto
+INFO Deleted Message PipelineAckProto
+INFO Deleted Message DataTransferTraceInfoProto
+INFO Deleted Message DataTransferEncryptorMessageProto
+INFO Deleted Message ClientReadStatusProto
+INFO Deleted Message OpTransferBlockProto
+INFO Deleted Message ReleaseShortCircuitAccessRequestProto
+INFO Deleted Message BlockOpResponseProto
+INFO Deleted Message OpRequestShortCircuitAccessProto
+INFO Deleted Message BaseHeaderProto
+INFO Deleted Message OpCustomProto
+INFO Deleted Message DNTransferAckProto
+INFO Deleted Message OpBlockGroupChecksumProto
+INFO Deleted Message ShortCircuitShmResponseProto
+INFO Deleted Message ClientOperationHeaderProto
+INFO Deleted Message OpBlockChecksumProto
+INFO Deleted Message ChecksumProto
+INFO Deleted Message OpBlockChecksumResponseProto
+INFO Deleted Message PacketHeaderProto
+INFO Deleted Message ShortCircuitShmIdProto
+INFO Deleted Message ShortCircuitShmRequestProto
+INFO Deleted Message OpReplaceBlockProto
+INFO Deleted Message ReleaseShortCircuitAccessResponseProto
+INFO Deleted Message ReadOpChecksumInfoProto
+INFO Delete Enum in Message ShortCircuitFdResponse: {'USE_RECEIPT_VERIFICATION': 1, 'DO_NOT_USE_RECEIPT_VERIFICATION': 0}
+INFO Delete Enum in Message Status: {'OOB_RESERVED2': 10, 'OOB_RESERVED3': 11, 'ERROR': 1, 'ERROR_BLOCK_PINNED': 13, 'ERROR_INVALID': 3, 'SUCCESS': 0, 'ERROR_UNSUPPORTED': 7, 'ERROR_ACCESS_TOKEN': 5, 'ERROR_CHECKSUM': 2, 'IN_PROGRESS': 12, 'ERROR_EXISTS': 4, 'OOB_RESERVED1': 9, 'CHECKSUM_OK': 6, 'OOB_RESTART': 8}
+INFO Added Field In Message RpcRequestHeaderProto: stateId AST: optional int64 stateId = 8 ../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+INFO Added Field In Message RpcResponseHeaderProto: stateId AST: optional int64 stateId = 9 ../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+INFO Deleted Message EventProto
+INFO Deleted Message EventsListProto
+INFO Deleted Message EventBatchProto
+INFO Deleted Message RenameEventProto
+INFO Deleted Message TruncateEventProto
+INFO Deleted Message CloseEventProto
+INFO Deleted Message CreateEventProto
+INFO Deleted Message MetadataUpdateEventProto
+INFO Deleted Message UnlinkEventProto
+INFO Deleted Message AppendEventProto
+INFO Delete Enum in Message INodeType: {'I_TYPE_FILE': 0, 'I_TYPE_SYMLINK': 2, 'I_TYPE_DIRECTORY': 1}
+INFO Delete Enum in Message EventType: {'EVENT_UNLINK': 5, 'EVENT_APPEND': 2, 'EVENT_CLOSE': 1, 'EVENT_METADATA': 4, 'EVENT_CREATE': 0, 'EVENT_TRUNCATE': 6, 'EVENT_RENAME': 3}
+INFO Delete Enum in Message MetadataUpdateType: {'META_TYPE_REPLICATION': 1, 'META_TYPE_XATTRS': 5, 'META_TYPE_PERMS': 3, 'META_TYPE_TIMES': 0, 'META_TYPE_ACLS': 4, 'META_TYPE_OWNER': 2}

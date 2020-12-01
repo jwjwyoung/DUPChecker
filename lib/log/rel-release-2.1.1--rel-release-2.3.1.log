@@ -1,0 +1,47 @@
+False
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/service-rpc/if/TCLIService.thrift
+THRIFT ast None
+../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+../hive/orc/src/protobuf/orc_proto.proto
+../hive/serde/if/serde.thrift
+THRIFT ast None
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/service-rpc/if/TCLIService.thrift
+THRIFT ast None
+../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+../hive/serde/if/serde.thrift
+THRIFT ast None
+INFO Added Message PrimaryKey
+INFO Added Message ForeignKeys
+INFO Added Field In Message Table: is_rewrite_enabled AST: optional bool is_rewrite_enabled = 15 ../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+INFO Added Message LlapOutputSocketInitMessage
+INFO Added Message NotTezEvent
+INFO Deleted Message VertexIdentifier
+INFO Added Field In Message QueryIdentifierProto: application_id_string AST: optional string application_id_string = 1 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message QueryIdentifierProto: app_attempt_number AST: optional int32 app_attempt_number = 3 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message QueryIdentifierProto: dag_index AST: optional int32 dag_index = 2 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Deleted Field In Message #QueryIdentifierProto: app_identifier AST: optional string app_identifier = 1
+INFO Deleted Field In Message #QueryIdentifierProto: dag_identifier AST: optional int32 dag_identifier = 2
+INFO Added Field In Message SignableVertexSpec: vertex_index AST: optional int32 vertex_index = 7 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message SignableVertexSpec: query_identifier AST: optional QueryIdentifierProto query_identifier = 3 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message SignableVertexSpec: hive_query_id AST: optional string hive_query_id = 4 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Deleted Field In Message #SignableVertexSpec: vertexIdentifier AST: optional VertexIdentifier vertexIdentifier = 3
+ERROR Changed Field In Message SignableVertexSpec: token_identifier OLD_AST: optional string token_identifier = 6 NEW_AST: optional string token_identifier = 8 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: output_specs OLD_AST: repeated IOSpecProto output_specs = 9 NEW_AST: repeated IOSpecProto output_specs = 11 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: grouped_input_specs OLD_AST: repeated GroupInputSpecProto grouped_input_specs = 10 NEW_AST: repeated GroupInputSpecProto grouped_input_specs = 12 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: vertex_parallelism OLD_AST: optional int32 vertex_parallelism = 11 NEW_AST: optional int32 vertex_parallelism = 13 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: input_specs OLD_AST: repeated IOSpecProto input_specs = 8 NEW_AST: repeated IOSpecProto input_specs = 10 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: processor_descriptor OLD_AST: optional EntityDescriptorProto processor_descriptor = 7 NEW_AST: optional EntityDescriptorProto processor_descriptor = 9 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: vertex_name OLD_AST: optional string vertex_name = 5 NEW_AST: optional string vertex_name = 6 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message SignableVertexSpec: dag_name OLD_AST: optional string dag_name = 4 NEW_AST: optional string dag_name = 5 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message SubmitWorkRequestProto: initial_event_bytes AST: optional bytes initial_event_bytes = 10 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message SubmitWorkRequestProto: initial_event_signature AST: optional bytes initial_event_signature = 11 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Added Field In Message SubmitWorkResponseProto: unique_node_id AST: optional string unique_node_id = 2 ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+INFO Deleted Field In Message #QueryCompleteRequestProto: query_id AST: optional string query_id = 1
+ERROR Changed Field In Message QueryCompleteRequestProto: query_identifier OLD_AST: optional QueryIdentifierProto query_identifier = 2 NEW_AST: optional QueryIdentifierProto query_identifier = 1 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+ERROR Changed Field In Message QueryCompleteRequestProto: delete_delay OLD_AST: optional int64 delete_delay = 4 NEW_AST: optional int64 delete_delay = 2 in ../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto

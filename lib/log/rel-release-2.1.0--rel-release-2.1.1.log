@@ -1,0 +1,15 @@
+False
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/service-rpc/if/TCLIService.thrift
+THRIFT ast None
+../hive/orc/src/protobuf/orc_proto.proto
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/service-rpc/if/TCLIService.thrift
+THRIFT ast None
+../hive/orc/src/protobuf/orc_proto.proto
+INFO Added Message Index
+INFO Added Message FileTail

@@ -1,0 +1,72 @@
+False
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/main/proto/HSAdminRefreshProtocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/main/proto/yarn_server_timelineserver_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/SCMUploader.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/client_SCM_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/SCM_Admin_protocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/HSAdminRefreshProtocol.proto
+INFO Added Field In Message AclStatusProto: permission AST: optional FsPermissionProto permission = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/acl.proto
+INFO Added Message StorageTypeQuotaInfoProto
+INFO Added Message StorageTypeQuotaInfosProto
+INFO Added Field In Message DatanodeInfoProto: lastUpdateMonotonic AST: optional uint64 lastUpdateMonotonic = 13 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+INFO Added Field In Message ContentSummaryProto: typeQuotaInfos AST: optional StorageTypeQuotaInfosProto typeQuotaInfos = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+INFO Added Field In Message RecoveringBlockProto: truncateBlock AST: optional BlockProto truncateBlock = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+INFO Added Field In Message RollingUpgradeStatusProto: finalized AST: optional bool finalized = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+INFO Added Field In Message NamespaceInfoProto: capabilities AST: optional uint64 capabilities = 6 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+INFO Added Message VolumeFailureSummaryProto
+INFO Added Field In Message StorageBlockReportProto: numberOfBlocks AST: optional uint64 numberOfBlocks = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message StorageBlockReportProto: blocksBuffers AST: repeated bytes blocksBuffers = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message HeartbeatRequestProto: volumeFailureSummary AST: optional VolumeFailureSummaryProto volumeFailureSummary = 8 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message HeartbeatResponseProto: rollingUpgradeStatusV2 AST: optional RollingUpgradeStatusProto rollingUpgradeStatusV2 = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message UpdateReplicaUnderRecoveryRequestProto: newBlockId AST: optional uint64 newBlockId = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+INFO Added Message RunSharedCacheCleanerTaskRequestProto
+INFO Added Message GetLabelsToNodesResponseProto
+INFO Added Message ReleaseSharedCacheResourceResponseProto
+INFO Added Message RunSharedCacheCleanerTaskResponseProto
+INFO Added Message UseSharedCacheResourceResponseProto
+INFO Added Message GetLabelsToNodesRequestProto
+INFO Added Message UseSharedCacheResourceRequestProto
+INFO Added Message ReleaseSharedCacheResourceRequestProto
+INFO Added Message TruncateResponseProto
+INFO Added Message TruncateRequestProto
+ERROR Added Field In Message SetQuotaRequestProto: storagespaceQuota AST: required uint64 storagespaceQuota = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message SetQuotaRequestProto: storageType AST: optional StorageTypeProto storageType = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+ERROR Deleted Field In Message #SetQuotaRequestProto: diskspaceQuota AST: required uint64 diskspaceQuota = 3
+INFO Added Field In Message AppendResponseProto: stat AST: optional HdfsFileStatusProto stat = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message AppendRequestProto: flag AST: optional uint32 flag = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message GetFsStatsResponseProto: missing_repl_one_blocks AST: optional uint64 missing_repl_one_blocks = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+Add Field in Enum CreateFlagProto Key: NEW_BLOCK Value 32
+INFO Added Message LogDeleterProto
+INFO Added Field In Message PipelineAckProto: flag AST: repeated uint32 flag = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+INFO Added Field In Message PipelineAckProto: reply AST: repeated Status reply = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+INFO Deleted Field In Message #PipelineAckProto: status AST: repeated Status status = 2
+INFO Added Field In Message OpWriteBlockProto: targetPinnings AST: repeated bool targetPinnings = 15 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpWriteBlockProto: pinning AST: optional bool pinning = 14 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+INFO Added Field In Message AppendEventProto: newBlock AST: optional bool newBlock = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/inotify.proto
+INFO Added Field In Message CreateEventProto: defaultBlockSize AST: optional int64 defaultBlockSize = 10 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/inotify.proto

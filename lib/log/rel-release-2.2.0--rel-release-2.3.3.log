@@ -1,0 +1,15 @@
+False
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/orc/src/protobuf/orc_proto.proto
+../hive/serde/if/serde.thrift
+THRIFT ast None
+../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/serde/if/serde.thrift
+THRIFT ast None
+INFO Added Message PrimaryKey
+INFO Added Message ForeignKeys
+INFO Added Field In Message Table: is_rewrite_enabled AST: optional bool is_rewrite_enabled = 15 ../hive/metastore/src/protobuf/org/apache/hadoop/hive/metastore/hbase/hbase_metastore_proto.proto

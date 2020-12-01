@@ -1,0 +1,56 @@
+False
+INFO Added Field In Message SnapshotDescription: ttl AST: optional int64 ttl = 8 ../hbase/hbase-protocol-shaded/src/main/protobuf/Snapshot.proto
+INFO Added Field In Message SnapshotDescription: ttl AST: optional int64 ttl = 7 ../hbase/hbase-protocol/src/main/protobuf/HBase.proto
+INFO Added Field In Message Condition: filter AST: optional Filter filter = 7 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: qualifier OLD_AST: required bytes qualifier = 3 NEW_AST: optional bytes qualifier = 3 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: family OLD_AST: required bytes family = 2 NEW_AST: optional bytes family = 2 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: comparator OLD_AST: required Comparator comparator = 5 NEW_AST: optional Comparator comparator = 5 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: compare_type OLD_AST: required CompareType compare_type = 4 NEW_AST: optional CompareType compare_type = 4 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Added Message Attribute
+INFO Added Field In Message WALKey: extended_attributes AST: repeated Attribute extended_attributes = 12 ../hbase/hbase-protocol-shaded/src/main/protobuf/WAL.proto
+INFO Added Message ClientMetrics
+INFO Added Message UserLoad
+INFO Added Field In Message RegionLoad: max_compacted_store_file_ref_count AST: optional int32 max_compacted_store_file_ref_count = 22 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: store_ref_count AST: optional int32 store_ref_count = 21 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ServerLoad: userLoads AST: repeated UserLoad userLoads = 12 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Message Attribute
+INFO Added Field In Message WALKey: extended_attributes AST: repeated Attribute extended_attributes = 12 ../hbase/hbase-protocol/src/main/protobuf/WAL.proto
+INFO Added Message ClientMetrics
+INFO Added Message UserLoad
+INFO Added Field In Message ReplicationLoadSource: oPsShipped AST: optional uint64 oPsShipped = 12 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: running AST: optional bool running = 9 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: recovered AST: optional bool recovered = 8 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: editsRead AST: optional uint64 editsRead = 11 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: timeStampOfNextToReplicate AST: optional uint64 timeStampOfNextToReplicate = 6 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: queueId AST: optional string queueId = 7 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReplicationLoadSource: editsSinceRestart AST: optional bool editsSinceRestart = 10 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: max_compacted_store_file_ref_count AST: optional int32 max_compacted_store_file_ref_count = 22 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: store_ref_count AST: optional int32 store_ref_count = 21 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ServerLoad: userLoads AST: repeated UserLoad userLoads = 12 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+ERROR Added Field In Message ReplicationLoadSink: timestampStarted AST: required uint64 timestampStarted = 3 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+ERROR Added Field In Message ReplicationLoadSink: totalOpsProcessed AST: required uint64 totalOpsProcessed = 4 ../hbase/hbase-protocol-shaded/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message ReopenTableRegionsStateData: region_names AST: repeated bytes region_names = 3 ../hbase/hbase-protocol-shaded/src/main/protobuf/MasterProcedure.proto
+INFO Added Field In Message Condition: filter AST: optional Filter filter = 7 ../hbase/hbase-protocol-shaded/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: qualifier OLD_AST: required bytes qualifier = 3 NEW_AST: optional bytes qualifier = 3 in ../hbase/hbase-protocol-shaded/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: family OLD_AST: required bytes family = 2 NEW_AST: optional bytes family = 2 in ../hbase/hbase-protocol-shaded/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: comparator OLD_AST: required Comparator comparator = 5 NEW_AST: optional Comparator comparator = 5 in ../hbase/hbase-protocol-shaded/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: compare_type OLD_AST: required CompareType compare_type = 4 NEW_AST: optional CompareType compare_type = 4 in ../hbase/hbase-protocol-shaded/src/main/protobuf/Client.proto
+INFO Added Message SlowLogResponses
+INFO Added Message ClearSlowLogResponses
+INFO Added Message SlowLogResponseRequest
+INFO Added Message ClearSlowLogResponseRequest
+INFO Added Message SetSnapshotCleanupResponse
+INFO Added Message GetClusterIdRequest
+INFO Added Message GetClusterIdResponse
+INFO Added Message ListNamespacesResponse
+INFO Added Message GetActiveMasterResponse
+INFO Added Message ListNamespacesRequest
+INFO Added Message SetSnapshotCleanupRequest
+INFO Added Message RegionSpecifierAndState
+INFO Added Message GetActiveMasterRequest
+INFO Added Message GetMetaRegionLocationsResponse
+INFO Added Message IsSnapshotCleanupEnabledResponse
+INFO Added Message SetRegionStateInMetaResponse
+INFO Added Message IsSnapshotCleanupEnabledRequest
+INFO Added Message SetRegionStateInMetaRequest
+INFO Added Message GetMetaRegionLocationsRequest

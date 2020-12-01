@@ -1,0 +1,24 @@
+False
+../hive/metastore/if/hive_metastore.thrift
+THRIFT ast None
+../hive/serde/if/serde.thrift
+THRIFT ast None
+../hive/service/if/hive_service.thrift
+THRIFT ast None
+../hive/service/if/TCLIService.thrift
+THRIFT ast None
+../hive/ql/src/protobuf/org/apache/hadoop/hive/ql/io/orc/orc_proto.proto
+../hive/ql/if/queryplan.thrift
+THRIFT ast None
+../hive/service-rpc/if/TCLIService.thrift
+THRIFT ast None
+../hive/llap-common/src/protobuf/LlapPluginProtocol.proto
+../hive/llap-common/src/protobuf/LlapDaemonProtocol.proto
+../hive/serde/if/serde.thrift
+THRIFT ast None
+../hive/ql/src/protobuf/HiveEvents.proto
+../hive/ql/if/queryplan.thrift
+THRIFT ast None
+../hive/standalone-metastore/src/main/protobuf/org/apache/hadoop/hive/metastore/metastore.proto
+../hive/standalone-metastore/src/main/thrift/hive_metastore.thrift
+THRIFT ast None

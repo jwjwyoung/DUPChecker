@@ -1,0 +1,60 @@
+False
+INFO Added Message SpaceQuotaStatus
+INFO Added Message SpaceQuota
+INFO Added Message SpaceQuotaSnapshot
+INFO Added Message SpaceLimitRequest
+INFO Added Field In Message Quotas: space AST: optional SpaceQuota space = 3 ../hbase/hbase-protocol/src/main/protobuf/Quota.proto
+INFO Add Enum in Message SpaceViolationPolicy: {'NO_WRITES': 3, 'NO_WRITES_COMPACTIONS': 2, 'DISABLE': 1, 'NO_INSERTS': 4}
+Add Field in Enum QuotaType Key: SPACE Value 2
+INFO Added Message TableState
+INFO Added Field In Message SnapshotDescription: ttl AST: optional int64 ttl = 7 ../hbase/hbase-protocol/src/main/protobuf/HBase.proto
+INFO Deleted Field In Message #SnapshotDescription: users_and_permissions AST: optional UsersAndPermissions users_and_permissions = 7
+INFO Deleted Message CompactionEventTracker
+INFO Added Message Attribute
+INFO Added Field In Message WALKey: extended_attributes AST: repeated Attribute extended_attributes = 12 ../hbase/hbase-protocol/src/main/protobuf/WAL.proto
+INFO Deleted Field In Message #BulkLoadDescriptor: cluster_ids AST: repeated string cluster_ids = 5
+INFO Added Message ColumnValueFilter
+INFO Added Message HasPermissionResponse
+INFO Added Message HasPermissionRequest
+INFO Added Field In Message GetUserPermissionsRequest: column_qualifier AST: optional bytes column_qualifier = 5 ../hbase/hbase-protocol/src/main/protobuf/AccessControl.proto
+INFO Added Field In Message GetUserPermissionsRequest: column_family AST: optional bytes column_family = 4 ../hbase/hbase-protocol/src/main/protobuf/AccessControl.proto
+INFO Added Field In Message GetUserPermissionsRequest: user_name AST: optional bytes user_name = 6 ../hbase/hbase-protocol/src/main/protobuf/AccessControl.proto
+INFO Added Message DeprecatedTableState
+INFO Deleted Message ReplicationLock
+INFO Deleted Message TableLock
+INFO Deleted Message RegionTransition
+INFO Deleted Message Table
+INFO Added Field In Message ReplicationPeer: namespaces AST: repeated bytes namespaces = 6 ../hbase/hbase-protocol/src/main/protobuf/ZooKeeper.proto
+ERROR Changed Field In Message ReplicationPeer: bandwidth OLD_AST: optional int64 bandwidth = 6 NEW_AST: optional int64 bandwidth = 7 in ../hbase/hbase-protocol/src/main/protobuf/ZooKeeper.proto
+INFO Deleted Field In Message #SplitLogTask: mode AST: optional RecoveryMode mode = 3
+INFO Deleted Field In Message #GetRegionInfoResponse: isRecovering AST: optional bool isRecovering = 3
+INFO Added Message BigDecimalComparator
+INFO Added Message BinaryComponentComparator
+Add Field in Enum CellType Key: DELETE_FAMILY_VERSION Value 10
+INFO Added Field In Message MutateRowsRequest: region AST: optional RegionSpecifier region = 4 ../hbase/hbase-protocol/src/main/protobuf/MultiRowMutation.proto
+INFO Added Message PrepareBulkLoadRequest
+INFO Added Message CleanupBulkLoadResponse
+INFO Added Message PrepareBulkLoadResponse
+INFO Added Message CleanupBulkLoadRequest
+INFO Added Message DelegationToken
+INFO Added Field In Message Condition: time_range AST: optional TimeRange time_range = 6 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Added Field In Message Condition: filter AST: optional Filter filter = 7 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: family OLD_AST: required bytes family = 2 NEW_AST: optional bytes family = 2 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: qualifier OLD_AST: required bytes qualifier = 3 NEW_AST: optional bytes qualifier = 3 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: compare_type OLD_AST: required CompareType compare_type = 4 NEW_AST: optional CompareType compare_type = 4 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+WARNING Changed Field In Message Condition: comparator OLD_AST: required Comparator comparator = 5 NEW_AST: optional Comparator comparator = 5 in ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Added Field In Message RegionLoadStats: memStoreLoad AST: optional int32 memStoreLoad = 1 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Deleted Field In Message #RegionLoadStats: memstoreLoad AST: optional int32 memstoreLoad = 1
+INFO Added Field In Message BulkLoadHFileRequest: bulk_token AST: optional string bulk_token = 5 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Added Field In Message BulkLoadHFileRequest: fs_token AST: optional DelegationToken fs_token = 4 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Added Field In Message BulkLoadHFileRequest: copy_file AST: optional bool copy_file = 6 ../hbase/hbase-protocol/src/main/protobuf/Client.proto
+INFO Deleted Field In Message #BulkLoadHFileRequest: cluster_ids AST: repeated string cluster_ids = 4
+INFO Added Message UserLoad
+INFO Added Message ClientMetrics
+INFO Added Field In Message ServerLoad: userLoads AST: repeated UserLoad userLoads = 12 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: storefile_index_size_KB AST: optional uint64 storefile_index_size_KB = 7 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: filtered_read_requests_count AST: optional uint64 filtered_read_requests_count = 19 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: max_compacted_store_file_ref_count AST: optional int32 max_compacted_store_file_ref_count = 22 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: store_ref_count AST: optional int32 store_ref_count = 21 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Deleted Field In Message #RegionLoad: storefile_index_size_MB AST: optional uint32 storefile_index_size_MB = 7
+INFO Add Enum in Message Option: {'BACKUP_MASTERS': 5, 'MASTER_COPROCESSORS': 6, 'HBASE_VERSION': 0, 'LIVE_SERVERS': 2, 'MASTER': 4, 'BALANCER_ON': 8, 'REGIONS_IN_TRANSITION': 7, 'CLUSTER_ID': 1, 'DEAD_SERVERS': 3}

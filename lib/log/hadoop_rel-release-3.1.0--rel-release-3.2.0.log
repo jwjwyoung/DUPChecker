@@ -1,0 +1,87 @@
+False
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/src/main/proto/ClientAMProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/FSProtos.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/RouterProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/src/main/proto/ClientAMProtocol.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/FSProtos.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/RouterProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/proto/FederationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+INFO Added Field In Message CreateEventProto: erasureCoded AST: optional bool erasureCoded = 11 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+INFO Added Message BlockChecksumOptionsProto
+INFO Add Enum in Message BlockChecksumTypeProto: {'MD5CRC': 1, 'COMPOSITE_CRC': 2}
+INFO Added Field In Message FormatRequestProto: force AST: optional bool force = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Message DisabledNameserviceRecordProto
+INFO Added Message GetDisabledNameservicesResponseProto
+INFO Added Message GetDisabledNameservicesRequestProto
+INFO Added Message EnableNameserviceResponseProto
+INFO Added Message EnableNameserviceRequestProto
+INFO Added Message DisableNameserviceRequestProto
+INFO Added Message DisableNameserviceResponseProto
+INFO Added Message LocalFileSystemPathHandleProto
+INFO Added Message RestartServiceRequestProto
+INFO Added Message RestartServiceResponseProto
+INFO Added Message CompInstancesUpgradeRequestProto
+INFO Added Message CompInstancesUpgradeResponseProto
+INFO Added Message CancelUpgradeResponseProto
+INFO Added Message UpgradeServiceRequestProto
+INFO Added Message CancelUpgradeRequestProto
+INFO Added Message GetCompInstancesResponseProto
+INFO Added Message GetCompInstancesRequestProto
+INFO Added Message UpgradeServiceResponseProto
+INFO Added Message NodesToAttributesMappingResponseProto
+INFO Added Message NodesToAttributesMappingRequestProto
+INFO Add Enum in Message AttributeMappingOperationTypeProto: {'REMOVE': 3, 'REPLACE': 1, 'ADD': 2}
+INFO Added Message SatisfyStoragePolicyResponseProto
+INFO Added Message UpgradeStatusResponseProto
+INFO Added Message SatisfyStoragePolicyRequestProto
+INFO Added Message UpgradeStatusRequestProto
+INFO Added Field In Message GetFsReplicatedBlockStatsResponseProto: highest_prio_low_redundancy_blocks AST: optional uint64 highest_prio_low_redundancy_blocks = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message GetFsECBlockGroupStatsResponseProto: highest_prio_low_redundancy_blocks AST: optional uint64 highest_prio_low_redundancy_blocks = 6 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+Add Field in Enum AddBlockFlagProto Key: IGNORE_CLIENT_LOCALITY Value 2
+INFO Added Message GetNodesToAttributesResponseProto
+INFO Added Message GetAttributesToNodesResponseProto
+INFO Added Message GetClusterNodeAttributesResponseProto
+INFO Added Message GetNodesToAttributesRequestProto
+INFO Added Message GetClusterNodeAttributesRequestProto
+INFO Added Message GetAttributesToNodesRequestProto
+INFO Added Field In Message AllocateRequestProto: tracking_url AST: optional string tracking_url = 11 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+ERROR Added Field In Message OpBlockChecksumResponseProto: blockChecksum AST: required bytes blockChecksum = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpBlockChecksumResponseProto: blockChecksumOptions AST: optional BlockChecksumOptionsProto blockChecksumOptions = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+ERROR Deleted Field In Message #OpBlockChecksumResponseProto: md5 AST: required bytes md5 = 3
+INFO Added Field In Message OpBlockGroupChecksumProto: blockChecksumOptions AST: optional BlockChecksumOptionsProto blockChecksumOptions = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpBlockChecksumProto: blockChecksumOptions AST: optional BlockChecksumOptionsProto blockChecksumOptions = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Message GetNextSPSPathResponseProto
+INFO Added Message GetFilePathResponseProto
+INFO Added Message GetFilePathRequestProto
+INFO Added Message GetNextSPSPathRequestProto

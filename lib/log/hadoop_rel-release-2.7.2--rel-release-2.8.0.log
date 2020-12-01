@@ -1,0 +1,129 @@
+False
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/proto/test_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/ResourceTracker.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/server/yarn_security_token.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/src/main/proto/bkjournal.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/JournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/xattr.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/proto/test_token.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/ResourceTracker.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/resourcemanager_administration_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/inotify.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/xattr.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/src/main/proto/bkjournal.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/JournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/editlog.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/InterDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeLifelineProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+INFO Added Field In Message JobReportProto: jobPriority AST: optional hadoop.yarn.PriorityProto jobPriority = 17 ../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+INFO Added Message AddResponseProto
+INFO Added Message SleepResponseProto
+INFO Added Message SlowPingRequestProto
+INFO Added Message SleepRequestProto
+INFO Added Message AddRequestProto
+INFO Added Message ExchangeResponseProto
+INFO Added Message EchoRequestProto2
+INFO Added Message OptRequestProto
+INFO Added Message OptResponseProto
+INFO Added Message ExchangeRequestProto
+INFO Added Message AddRequestProto2
+INFO Added Message EchoResponseProto2
+INFO Added Message AuthUserResponseProto
+INFO Added Message AuthMethodResponseProto
+INFO Added Field In Message NodeStatusProto: node_utilization AST: optional ResourceUtilizationProto node_utilization = 7 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+INFO Added Field In Message NodeStatusProto: containers_utilization AST: optional ResourceUtilizationProto containers_utilization = 6 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+INFO Added Field In Message NodeStatusProto: increased_containers AST: repeated ContainerProto increased_containers = 8 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+INFO Added Field In Message ContainerTokenIdentifierForTestProto: version AST: optional int32 version = 14 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/proto/test_token.proto
+INFO Deleted Message NNHAStatusHeartbeatProto
+INFO Added Field In Message HeartbeatRequestProto: requestFullBlockReportLease AST: optional bool requestFullBlockReportLease = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message HeartbeatResponseProto: fullBlockReportLeaseId AST: optional uint64 fullBlockReportLeaseId = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message BlockReportContextProto: leaseId AST: optional uint64 leaseId = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Message IncreaseContainersResourceRequestProto
+INFO Added Message UpdatedContainerProto
+INFO Added Message FailApplicationAttemptResponseProto
+INFO Added Message IncreaseContainersResourceResponseProto
+INFO Added Message FailApplicationAttemptRequestProto
+INFO Added Message UpdateApplicationPriorityRequestProto
+INFO Added Message GetNewReservationRequestProto
+INFO Added Message UpdateContainerRequestProto
+INFO Added Message SignalContainerRequestProto
+INFO Added Message GetNewReservationResponseProto
+INFO Added Message SignalContainerResponseProto
+INFO Added Message UpdateContainerErrorProto
+INFO Added Message UpdateApplicationPriorityResponseProto
+INFO Added Message ReservationListResponseProto
+INFO Added Message ReservationListRequestProto
+INFO Deleted Message GetContainerStatusResponseProto
+INFO Deleted Message GetContainerStatusRequestProto
+INFO Added Field In Message AllocateResponseProto: application_priority AST: optional PriorityProto application_priority = 13 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message AllocateResponseProto: update_errors AST: repeated UpdateContainerErrorProto update_errors = 15 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message AllocateResponseProto: updated_containers AST: repeated UpdatedContainerProto updated_containers = 16 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message AllocateRequestProto: update_requests AST: repeated UpdateContainerRequestProto update_requests = 7 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message KillApplicationRequestProto: diagnostics AST: optional string diagnostics = 2 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message ReservationSubmissionRequestProto: reservation_id AST: optional ReservationIdProto reservation_id = 3 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Deleted Field In Message #ReservationSubmissionResponseProto: reservation_id AST: optional ReservationIdProto reservation_id = 1
+INFO Added Field In Message GetClusterNodeLabelsResponseProto: deprecatedNodeLabels AST: repeated string deprecatedNodeLabels = 1 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+ERROR Changed Field In Message GetClusterNodeLabelsResponseProto: nodeLabels OLD_AST: repeated string nodeLabels = 1 NEW_AST: repeated NodeLabelProto nodeLabels = 2 in ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Add Enum in Message ContainerUpdateTypeProto: {'INCREASE_RESOURCE': 0, 'DECREASE_RESOURCE': 1}
+INFO Added Message RPCCallerContextProto
+INFO Added Field In Message RpcRequestHeaderProto: callerContext AST: optional RPCCallerContextProto callerContext = 7 ../hadoop/hadoop-common-project/hadoop-common/src/main/proto/RpcHeader.proto
+INFO Added Message CheckForDecommissioningNodesRequestProto
+INFO Added Message RefreshNodesResourcesRequestProto
+INFO Added Message RefreshClusterMaxPriorityResponseProto
+INFO Added Message CheckForDecommissioningNodesResponseProto
+INFO Added Message NodeIdToLabelsNameProto
+INFO Added Message UpdateNodeLabelsResponseProto
+INFO Added Message RefreshNodesResourcesResponseProto
+INFO Added Message RefreshClusterMaxPriorityRequestProto
+INFO Added Field In Message ReplaceLabelsOnNodeRequestProto: failOnUnknownNodes AST: optional bool failOnUnknownNodes = 2 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+INFO Added Field In Message AddToClusterNodeLabelsRequestProto: deprecatedNodeLabels AST: repeated string deprecatedNodeLabels = 1 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+ERROR Changed Field In Message AddToClusterNodeLabelsRequestProto: nodeLabels OLD_AST: repeated string nodeLabels = 1 NEW_AST: repeated NodeLabelProto nodeLabels = 2 in ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+INFO Added Field In Message RefreshNodesRequestProto: decommissionType AST: optional DecommissionTypeProto decommissionType = 1 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+INFO Add Enum in Message DecommissionTypeProto: {'NORMAL': 1, 'FORCEFUL': 3, 'GRACEFUL': 2}

@@ -1,0 +1,20 @@
+False
+INFO Added Message CompactionSwitchResponse
+INFO Added Message CompactionSwitchRequest
+INFO Added Field In Message SnapshotDescription: ttl AST: optional int64 ttl = 8 ../hbase/hbase-protocol/src/main/protobuf/HBase.proto
+INFO Added Message Attribute
+INFO Added Field In Message WALKey: extended_attributes AST: repeated Attribute extended_attributes = 12 ../hbase/hbase-protocol/src/main/protobuf/WAL.proto
+INFO Added Message IsSnapshotCleanupEnabledRequest
+INFO Added Message ListNamespacesResponse
+INFO Added Message SetSnapshotCleanupResponse
+INFO Added Message SetSnapshotCleanupRequest
+INFO Added Message ListNamespacesRequest
+INFO Added Message IsSnapshotCleanupEnabledResponse
+INFO Added Field In Message Throttle: req_capacity_unit AST: optional TimedQuota req_capacity_unit = 7 ../hbase/hbase-protocol/src/main/protobuf/Quota.proto
+INFO Added Field In Message Throttle: write_capacity_unit AST: optional TimedQuota write_capacity_unit = 8 ../hbase/hbase-protocol/src/main/protobuf/Quota.proto
+INFO Added Field In Message Throttle: read_capacity_unit AST: optional TimedQuota read_capacity_unit = 9 ../hbase/hbase-protocol/src/main/protobuf/Quota.proto
+Add Field in Enum ThrottleType Key: REQUEST_CAPACITY_UNIT Value 7
+Add Field in Enum ThrottleType Key: WRITE_CAPACITY_UNIT Value 8
+Add Field in Enum ThrottleType Key: READ_CAPACITY_UNIT Value 9
+INFO Added Field In Message RegionLoad: store_ref_count AST: optional int32 store_ref_count = 21 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto
+INFO Added Field In Message RegionLoad: max_compacted_store_file_ref_count AST: optional int32 max_compacted_store_file_ref_count = 22 ../hbase/hbase-protocol/src/main/protobuf/ClusterStatus.proto

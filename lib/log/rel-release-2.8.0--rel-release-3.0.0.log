@@ -1,0 +1,199 @@
+False
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/Security.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/src/main/proto/bkjournal.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/proto/yarn_server_resourcemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/collectornodemanager_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/distributed_scheduling_am_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_federation_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/containermanagement_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/applicationclient_protocol.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test_rpc_service.proto
+../hadoop/hadoop-common-project/hadoop-common/src/test/proto/test.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/FSProtos.proto
+../hadoop/hadoop-common-project/hadoop-common/src/main/proto/Security.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/encryption.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientDatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/acl.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/erasurecoding.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ReconfigurationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/NamenodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/RouterProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/FederationProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/fsimage.proto
+../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+INFO Added Field In Message ContainerTokenIdentifierProto: executionType AST: optional ExecutionTypeProto executionType = 13 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/proto/yarn_security_token.proto
+INFO Added Field In Message JobReportProto: historyFile AST: optional string historyFile = 18 ../hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/proto/mr_protos.proto
+INFO Added Message SlowDiskReportProto
+INFO Added Message BlockECReconstructionCommandProto
+INFO Added Message SlowPeerReportProto
+INFO Added Field In Message DatanodeCommandProto: blkECReconstructionCmd AST: optional BlockECReconstructionCommandProto blkECReconstructionCmd = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message HeartbeatRequestProto: slowDisks AST: repeated SlowDiskReportProto slowDisks = 11 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message HeartbeatRequestProto: slowPeers AST: repeated SlowPeerReportProto slowPeers = 10 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Field In Message BlockReportContextProto: sorted AST: optional bool sorted = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/DatanodeProtocol.proto
+INFO Added Message GetFsECBlockGroupStatsResponseProto
+INFO Added Message GetFsECBlockGroupStatsRequestProto
+INFO Added Message ListOpenFilesResponseProto
+INFO Added Message ListOpenFilesRequestProto
+INFO Added Message GetFsReplicatedBlockStatsRequestProto
+INFO Added Message OpenFilesBatchResponseProto
+INFO Added Message GetFsReplicatedBlockStatsResponseProto
+INFO Added Field In Message CreateRequestProto: unmasked AST: optional FsPermissionProto unmasked = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message CreateRequestProto: ecPolicyName AST: optional string ecPolicyName = 10 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message CachePoolInfoProto: defaultReplication AST: optional uint32 defaultReplication = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message SaveNamespaceResponseProto: saved AST: optional bool saved = 1 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message SaveNamespaceRequestProto: timeWindow AST: optional uint64 timeWindow = 1 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message SaveNamespaceRequestProto: txGap AST: optional uint64 txGap = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message MkdirsRequestProto: unmasked AST: optional FsPermissionProto unmasked = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+INFO Added Field In Message Rename2RequestProto: moveToTrash AST: optional bool moveToTrash = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/ClientNamenodeProtocol.proto
+Add Field in Enum DatanodeReportTypeProto Key: ENTERING_MAINTENANCE Value 5
+Add Field in Enum DatanodeReportTypeProto Key: IN_MAINTENANCE Value 6
+Add Field in Enum CreateFlagProto Key: SHOULD_REPLICATE Value 128
+INFO Added Message FlowContextProto
+INFO Added Field In Message ContainerManagerApplicationProto: appLogAggregationInitedTime AST: optional int64 appLogAggregationInitedTime = 6 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+INFO Added Field In Message ContainerManagerApplicationProto: flowContext AST: optional FlowContextProto flowContext = 7 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+INFO Added Field In Message DeletionServiceDeleteTaskProto: taskType AST: optional string taskType = 7 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/proto/yarn_server_nodemanager_recovery.proto
+INFO Added Message GetAllResourceTypeInfoResponseProto
+INFO Added Message UpdateApplicationTimeoutsRequestProto
+INFO Added Message UpdateApplicationTimeoutsResponseProto
+INFO Added Message ResourceLocalizationResponseProto
+INFO Added Message ResourceLocalizationRequestProto
+INFO Added Message ReInitializeContainerRequestProto
+INFO Added Message RollbackResponseProto
+INFO Added Message ContainerUpdateResponseProto
+INFO Added Message RestartContainerResponseProto
+INFO Added Message ContainerUpdateRequestProto
+INFO Added Message GetAllResourceTypeInfoRequestProto
+INFO Added Message ReInitializeContainerResponseProto
+INFO Added Message CommitResponseProto
+INFO Added Field In Message UpdateContainerRequestProto: execution_type AST: optional ExecutionTypeProto execution_type = 5 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message RegisterApplicationMasterResponseProto: resource_types AST: repeated ResourceTypeInfoProto resource_types = 9 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Deleted Field In Message #AllocateRequestProto: increase_request AST: repeated ContainerResourceIncreaseRequestProto increase_request = 6
+INFO Added Field In Message UpdateContainerErrorProto: current_container_version AST: optional int32 current_container_version = 3 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Added Field In Message AllocateResponseProto: collector_info AST: optional CollectorInfoProto collector_info = 14 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/yarn_service_protos.proto
+INFO Deleted Field In Message #AllocateResponseProto: increased_containers AST: repeated ContainerResourceIncreaseProto increased_containers = 10
+INFO Deleted Field In Message #AllocateResponseProto: decreased_containers AST: repeated ContainerResourceDecreaseProto decreased_containers = 11
+Add Field in Enum ContainerUpdateTypeProto Key: PROMOTE_EXECUTION_TYPE Value 2
+Add Field in Enum ContainerUpdateTypeProto Key: DEMOTE_EXECUTION_TYPE Value 3
+INFO Deleted Message StorageUuidsProto
+INFO Added Field In Message RecoveringBlockProto: blockIndices AST: optional bytes blockIndices = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Field In Message RecoveringBlockProto: ecPolicy AST: optional ErasureCodingPolicyProto ecPolicy = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Field In Message RemoteEditLogManifestProto: committedTxnId AST: optional uint64 committedTxnId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Field In Message BlockWithLocationsProto: dataBlockNum AST: optional uint32 dataBlockNum = 6 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Field In Message BlockWithLocationsProto: cellSize AST: optional uint32 cellSize = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Field In Message BlockWithLocationsProto: indices AST: optional bytes indices = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/HdfsServer.proto
+INFO Added Message FsPermissionProto
+INFO Added Message CancelPlanRequestProto
+INFO Added Message GetVolumeReportRequestProto
+INFO Added Message GetVolumeReportResponseProto
+INFO Added Message SubmitDiskBalancerPlanResponseProto
+INFO Added Message QueryPlanStatusRequestProto
+INFO Added Message DiskBalancerSettingResponseProto
+INFO Added Message QueryPlanStatusResponseProto
+INFO Added Message CancelPlanResponseProto
+INFO Added Message DiskBalancerSettingRequestProto
+INFO Added Message SubmitDiskBalancerPlanRequestProto
+INFO Deleted Message ListReconfigurablePropertiesResponseProto
+INFO Deleted Message GetHdfsBlockLocationsResponseProto
+INFO Deleted Message ListReconfigurablePropertiesRequestProto
+INFO Deleted Message GetReconfigurationStatusResponseProto
+INFO Deleted Message GetHdfsBlockLocationsRequestProto
+INFO Deleted Message GetReconfigurationStatusRequestProto
+INFO Deleted Message StartReconfigurationResponseProto
+INFO Deleted Message GetReconfigurationStatusConfigChangeProto
+INFO Deleted Message StartReconfigurationRequestProto
+INFO Added Message IsRollingUpgradeResponseProto
+INFO Added Message IsRollingUpgradeRequestProto
+INFO Added Field In Message RefreshNodesRequestProto: decommissionTimeout AST: optional int32 decommissionTimeout = 2 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/proto/server/yarn_server_resourcemanager_service_protos.proto
+INFO Added Message BlockTokenSecretProto
+INFO Added Message ECSchemaOptionEntryProto
+INFO Added Message DatanodeVolumeInfoProto
+INFO Added Message ErasureCodingPolicyProto
+INFO Added Message AddErasureCodingPolicyResponseProto
+INFO Added Message StorageUuidsProto
+INFO Added Message ReencryptionInfoProto
+INFO Added Message ECSchemaProto
+INFO Deleted Message FsPermissionProto
+INFO Added Field In Message ZoneEncryptionInfoProto: reencryptionProto AST: optional ReencryptionInfoProto reencryptionProto = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message LocatedBlocksProto: ecPolicy AST: optional ErasureCodingPolicyProto ecPolicy = 7 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message HdfsFileStatusProto: ecPolicy AST: optional ErasureCodingPolicyProto ecPolicy = 17 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message HdfsFileStatusProto: flags AST: optional uint32 flags = 18 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message DatanodeInfoProto: lastBlockReportTime AST: optional uint64 lastBlockReportTime = 15 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message DatanodeInfoProto: lastBlockReportMonotonic AST: optional uint64 lastBlockReportMonotonic = 16 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message FsServerDefaultsProto: keyProviderUri AST: optional string keyProviderUri = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message FsServerDefaultsProto: policyId AST: optional uint32 policyId = 10 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message LocatedBlockProto: blockIndices AST: optional bytes blockIndices = 9 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message LocatedBlockProto: blockTokens AST: repeated hadoop.common.TokenProto blockTokens = 10 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Added Field In Message ContentSummaryProto: erasureCodingPolicy AST: optional string erasureCodingPolicy = 12 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/hdfs.proto
+INFO Add Enum in Message ErasureCodingPolicyState: {'REMOVED': 3, 'ENABLED': 2, 'DISABLED': 1}
+INFO Add Enum in Message AccessModeProto: {'WRITE': 2, 'REPLACE': 4, 'READ': 1, 'COPY': 3}
+INFO Add Enum in Message BlockTypeProto: {'STRIPED': 1, 'CONTIGUOUS': 0}
+INFO Added Message ZoneReencryptionStatusProto
+INFO Added Message ReencryptEncryptionZoneResponseProto
+INFO Added Message ReencryptEncryptionZoneRequestProto
+INFO Added Message ListReencryptionStatusResponseProto
+INFO Added Message ListReencryptionStatusRequestProto
+INFO Add Enum in Message ReencryptActionProto: {'CANCEL_REENCRYPT': 1, 'START_REENCRYPT': 2}
+INFO Add Enum in Message ReencryptionStateProto: {'COMPLETED': 3, 'SUBMITTED': 1, 'PROCESSING': 2}
+INFO Added Field In Message DoFinalizeRequestProto: nameServiceId AST: optional string nameServiceId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message RequestInfoProto: nameServiceId AST: optional string nameServiceId = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message GetJournalStateRequestProto: nameServiceId AST: optional string nameServiceId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message DoRollbackRequestProto: nameserviceId AST: optional string nameserviceId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message CanRollBackRequestProto: nameServiceId AST: optional string nameServiceId = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message NewEpochRequestProto: nameServiceId AST: optional string nameServiceId = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message GetJournalCTimeRequestProto: nameServiceId AST: optional string nameServiceId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message JournalRequestProto: nameServiceId AST: optional string nameServiceId = 6 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message IsFormattedRequestProto: nameServiceId AST: optional string nameServiceId = 2 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message GetEditLogManifestRequestProto: nameServiceId AST: optional string nameServiceId = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message FormatRequestProto: nameServiceId AST: optional string nameServiceId = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Field In Message DiscardSegmentsRequestProto: nameServiceId AST: optional string nameServiceId = 3 ../hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/proto/QJournalProtocol.proto
+INFO Added Message UserResponseProto
+INFO Added Message SleepResponseProto2
+INFO Added Message SleepRequestProto2
+INFO Deleted Message AuthUserResponseProto
+INFO Added Message CredentialsProto
+INFO Added Message CredentialsKVProto
+INFO Added Message OpBlockGroupChecksumProto
+INFO Added Field In Message OpWriteBlockProto: storageId AST: optional string storageId = 16 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpWriteBlockProto: targetStorageIds AST: repeated string targetStorageIds = 17 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpTransferBlockProto: targetStorageIds AST: repeated string targetStorageIds = 4 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+INFO Added Field In Message OpReplaceBlockProto: storageId AST: optional string storageId = 5 ../hadoop/hadoop-hdfs-project/hadoop-hdfs-client/src/main/proto/datatransfer.proto
+Add Field in Enum Status Key: ERROR_BLOCK_PINNED Value 13
+INFO Added Message OpportunisticContainersStatusProto
+INFO Added Field In Message NodeStatusProto: opportunistic_containers_status AST: optional OpportunisticContainersStatusProto opportunistic_containers_status = 9 ../hadoop/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/proto/yarn_server_common_protos.proto
