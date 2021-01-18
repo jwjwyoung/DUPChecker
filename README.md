@@ -3,7 +3,7 @@
 ## What can SLCChecker do:
 
 SLCChecker analyzes data syntax defined using standard serialization libraries and detect incompatibility across versions, which can lead to upgrade failures. 
-It focuses on two widely adopted serialization libraries, [Portocol Buffer](https://developers.google. com/protocol-buffers/docs/proto.) and [Apache Thrift](https://diwakergupta.github.io/thrift-missing-guide/):
+It focuses on two widely adopted serialization libraries, [Portocol Buffer](https://developers.google.com/protocol-buffers/docs/proto.) and [Apache Thrift](https://diwakergupta.github.io/thrift-missing-guide/):
 
   (1). Add/delete required field. 
 
