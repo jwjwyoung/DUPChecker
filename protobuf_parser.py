@@ -30,6 +30,7 @@ integer = Regex(r"[+-]?\d+")
 # (0x)?[0-9abcdef]+
 hex_integer = Regex(r"[+-]?(?:0x)[0-9abcdef]+")
 
+
 LBRACE, RBRACE, LBRACK, RBRACK, LPAR, RPAR, EQ, SEMI = map(Suppress, "{}[]()=;")
 
 kwds = """message required optional repeated enum extensions extends extend 

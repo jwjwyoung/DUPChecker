@@ -7,7 +7,8 @@ from javalang.tree import BasicType
 import numpy as np
 from protobuf_parser import parser
 from thrift_parser import thrift_parser
-
+import sys
+import traceback
 class Java_file:
     def __init__(self, path, ast, contents):
         self.java_classes = {}
@@ -133,10 +134,13 @@ class Proto_file:
                 ast = item[2]
                 enum = {}
                 for i in ast:
-                    if i[1].startswith("0x"):
-                        enum[i[0]] = int(i[1], 16)
+                    if len(i) > 1:
+                        if i[1].startswith("0x"):
+                            enum[i[0]] = int(i[1], 16)
+                        else:
+                            enum[i[0]] = int(i[1])
                     else:
-                        enum[i[0]] = int(i[1])
+                        enum[i[0]] = 'default'
                 self.enums[name] = enum
             if item[0] == "struct":
                 name = item[1]
@@ -356,7 +360,10 @@ class Proto_message:
                     elif t == "map":
                         field_type = "map<" + item[index + 1] + ", " + item[index + 2] + ">"
                         index += 3
-                field_name = item[index]
+                if item[-2] == "=":
+                    field_name = item[-3]
+                else:
+                    field_name = item[-1]
                 # if field_name == 'Text':
                 #     print("FIELD_NAME", field_name, field_type, field_qf, self.ast)
                 #     exit()
@@ -556,9 +563,9 @@ class Version_class:
 
     # if changed files are empty or None, then will process all certain files
     def parseFiles(self, changed_files, file_types=None):
+        blacklists = ['BackendGflags.thrift', 'CatalogInternalService.thrift', 'CatalogService.thrift', 'DataSinks.thrift', 'Data.thrift', 'Descriptors.thrift', 'Exprs.thrift', 'Frontend.thrift', 'ImpalaInternalService.thrift', 'JniCatalog.thrift', 'Logging.thrift', 'NetworkTest.thrift', 'Partitions.thrift', 'Planner.thrift', 'PlanNodes.thrift', 'ResourceProfile.thrift', 'Results.thrift', 'SqlConstraints.thrift', 'StatestoreService.thrift', 'Zip.thrift']
         for path in self.files:
             if os.path.exists(path):
-                # print("path " + path)
                 if len(changed_files) == 0 or (
                     len(changed_files) > 0 and path in changed_files
                 ):  
@@ -582,11 +589,23 @@ class Version_class:
                                 except:
                                     pass
                         if path.endswith(".thrift"):
-                            contents = contents.replace(" 0x", " x")
-                            ast = thrift_parser.parseString(contents)
-                            pf = Proto_file(path, ast, contents)
-                            self.proto_files[path] = pf
-                            pf.parseAst()
-                            #print("THRIFT ast", ast)
+                            if (not file_types) or "thrift" in file_types:
+                                print("THRIFT PATH", path)
+                                contents = contents.replace(" 0x", " x")
+                                try:
+                                    fn = path.split("/")[-1]
+                                    #print('impala' in self.folder and fn in blacklists, fn)
+                                    if 'impala' in self.folder and fn in blacklists:
+                                        continue
+                                    ast = thrift_parser.parseString(contents)
+                                    pf = Proto_file(path, ast, contents)
+                                    path = "/".join(path.split("/")[-2:])
+                                    self.proto_files[path] = pf
+                                    pf.parseAst()
+                                    print(len(pf.messages))
+                                except:
+                                    print("path " + path)
+                                    traceback.print_exc(file=sys.stdout)
+                                    pass
                     except SyntaxError:
                         print("syntax error " + path)
