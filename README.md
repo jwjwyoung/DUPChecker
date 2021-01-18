@@ -7,29 +7,36 @@ It focuses on two widely adopted serialization libraries, [Portocol Buffer](http
 
 Protocols evolve over time. Developers can update any protocol to meet the program’s need. However, certain rules have to be followed to avoid data-syntax incompatibility across versions. Particularly, the manuals of Protocol Buffer and Apache Thrift both state the following rules:
 
-  (1). Add/delete required field. 
+    (1). Add/delete required field. 
 
-  (2). The tag number of a field has been changed, the protobuf guidelines suggests each field in the message definition has a unique number. These numbers are used to identify your fields in the message binary format, and should not be changed once your message type is in use.
+    (2). The tag number of a field has been changed.
 
-  (3).  A  required field has been changed to optional. According to the guidelines in protobuf official website, Required Is Forever. You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field - old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead.
+    (3).  A  required field has been changed to non-required. 
 
-Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `errors` by SLCChecker; violating the third rule may lead to failures, which will be referred to as `warnings` by SLCChecker, if the new version generates data that does not contain its no-longer-required data member.
+Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `ERROR` by SLCChecker; violating the third rule may lead to failures, which will be referred to as `WARNING` by SLCChecker, if the new version generates data that does not contain its no-longer-required data member. For other type of changes such as changing field type,
+SLCChecker will output `INFO` level information. 
 
-## How to use
-1. Checkout SLCChecker to your local machine.
+## Installation
+
+Checkout SLCChecker to your local machine.
 
     `git clone git@github.com:jwjwyoung/SLCChecker.git`
 
-2. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
+## Usage
+1. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
 
-3. Run Script
+2. Run Script
 
     `python3 slcchecker.py  --app path_app --filetype --v1 old_version_tag --v2 new_version_tag`
 
-    e.g. for proto file:
+    e.g. check for proto file:
 
     `python3 slcchecker.py  --app hbase --proto --v1 rel/2.2.6 --v2 rel/2.3.3`
     
-    e.g. for thrift file:
+    e.g. check for thrift file:
 
     `python3 slcchecker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
