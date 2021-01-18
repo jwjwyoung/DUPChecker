@@ -16,7 +16,9 @@ For (1) and (3), SLCChecker will output ERROR info, and for (2), SLCChecker will
 ## How to use
 1. Checkout SLCChecker to your local machine.
 
-1. Run Script
+2. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
+
+3. Run Script
 
     `python3 slcchecker.py  --app path_app --filetype --v1 old_version_tag --v2 new_version_tag`
 
