@@ -1,7 +1,8 @@
 # Serialization Library Compatibility Checker
 
 ## What can SLCChecker do:
-1. incompatibility of protocol file created through PortocolBuffer or Thrift across versions:
+
+Incompatibility of protocol files across versions, which are created using serialization library such as PortocolBuffer and Thrift :
 
 
     (1). Add/delete required field. 
@@ -12,7 +13,6 @@
 
     For (1) and (3), SLCChecker will output ERROR info, and for (2), SLCChecker will output WARNING info. 
 
-2. incompatibility of thrift file across versions.
 
 ## How to use
 
