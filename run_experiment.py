@@ -14,12 +14,22 @@ tags_dict = {
 if len(sys.argv) > 2:
   key = sys.argv[1]
   ty = sys.argv[2]
+  tags = tags_dict[key]
+  for t in itertools.combinations(tags,2):
+    log_fn = "log/" + key + "_" + ty +   t[0].replace("/","-") + "--" + t[1].replace("/","-") + ".log"
+    cmd = "python3 slcchecker.py --{} --app {} --v1 {} --v2 {} > {}".format(ty, key, t[0], t[1], log_fn)
+    print(cmd)
+    os.system(cmd)
 else:
-  print("2 Parameters are required <app_name, type>")
-
-tags = tags_dict[key]
-for t in itertools.combinations(tags,2):
-  log_fn = "log/" + key + "_" + ty +   t[0].replace("/","-") + "--" + t[1].replace("/","-") + ".log"
-  cmd = "python3 slcchecker.py --{} --app {} --v1 {} --v2 {} > {}".format(ty, key, t[0], t[1], log_fn)
-  print(cmd)
-  os.system(cmd)
+  print("run experiment for all")
+  for key in tags_dict:
+    tags = tags_dict[key]
+    if key == 'impala':
+      ty = 'thrift'
+    else:
+      ty = 'proto'
+    for t in itertools.combinations(tags,2):
+      log_fn = "log/" + key + "_" + ty +   t[0].replace("/","-") + "--" + t[1].replace("/","-") + ".log"
+      cmd = "python3 slcchecker.py --{} --app {} --v1 {} --v2 {} > {}".format(ty, key, t[0], t[1], log_fn)
+      print(cmd)
+      os.system(cmd)
