@@ -41,15 +41,23 @@ Checkout SLCChecker to your local machine.
 
 1. Checkout the required applications. 
 
-  (1). hbase `git clone https://github.com/apache/hbase.git`
-  
-  (2). hdfs, yarn `git clone https://github.com/apache/hadoop.git`
-  
-  (3). mesos `git clone https://github.com/apache/mesos.git`
+      (1). hbase `git clone https://github.com/apache/hbase.git`
+      
+      (2). hdfs, yarn `git clone https://github.com/apache/hadoop.git`
+      
+      (3). mesos `git clone https://github.com/apache/mesos.git`
 
-  (4). hive `git clone https://github.com/apache/hive.git`
+      (4). hive `git clone https://github.com/apache/hive.git`
 
-  (5). impala `git clone https://github.com/apache/impala.git`
+      (5). impala `git clone https://github.com/apache/impala.git`
+2. Create a log folder
+    ` mkdir log`
+
+3. Run scripts:
+
+    `python3 run_experiment.py` 
+
+    The results will be output to files under log folder with application's name as prefix.
 
 ## Contributing
 
