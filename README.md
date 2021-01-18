@@ -5,7 +5,7 @@
 SLCChecker analyzes data syntax defined using standard serialization libraries and detect incompatibility across versions, which can lead to upgrade failures. 
 It focuses on two widely adopted serialization libraries, [Portocol Buffer](https://developers.google.com/protocol-buffers/docs/proto.) and [Apache Thrift](https://diwakergupta.github.io/thrift-missing-guide/).
 
-Protocols evolve over time. Developers can update any protocol to meet the program’s need. However, certain rules have to be followed to avoid data-syntax incompatibility across ver- sions. Particularly, the manuals of Protocol Buffer and Apache Thrift both state the following rules 
+Protocols evolve over time. Developers can update any protocol to meet the program’s need. However, certain rules have to be followed to avoid data-syntax incompatibility across versions. Particularly, the manuals of Protocol Buffer and Apache Thrift both state the following rules:
 
   (1). Add/delete required field. 
 
@@ -13,7 +13,7 @@ Protocols evolve over time. Developers can update any protocol to meet the progr
 
   (3).  A  required field has been changed to optional. According to the guidelines in protobuf official website, Required Is Forever. You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field - old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead.
 
-Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as errors by SLCChecker; violating the third rule may lead to failures, which will be referred to as warnings by SLCChecker, if the new version generates data that does not contain its no-longer-required data member.
+Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `errors` by SLCChecker; violating the third rule may lead to failures, which will be referred to as `warnings` by SLCChecker, if the new version generates data that does not contain its no-longer-required data member.
 
 ## How to use
 1. Checkout SLCChecker to your local machine.
