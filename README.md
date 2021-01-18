@@ -7,11 +7,11 @@ It focuses on two widely adopted serialization libraries, [Portocol Buffer](http
 
   (1). Add/delete required field. 
 
-  (2). A  required field has been changed to optional. According to the guidelines in protobuf official website, Required Is Forever. You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field - old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead.
+  (2). The tag number of a field has been changed, the protobuf guidelines suggests each field in the message definition has a unique number. These numbers are used to identify your fields in the message binary format, and should not be changed once your message type is in use.
 
-  (3). The tag number of a field has been changed, the protobuf guidelines suggests each field in the message definition has a unique number. These numbers are used to identify your fields in the message binary format, and should not be changed once your message type is in use. 
+  (3).  A  required field has been changed to optional. According to the guidelines in protobuf official website, Required Is Forever. You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field - old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead.
 
-For (1) and (3), SLCChecker will output ERROR info, and for (2), SLCChecker will output WARNING info. 
+For (1) and (2), SLCChecker will output ERROR info, and for (3), SLCChecker will output WARNING info. 
 
 
 ## How to use
