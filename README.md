@@ -18,7 +18,7 @@ Violating the first two rules will definitely lead to upgrade failures caused by
 ## How to use
 1. Checkout SLCChecker to your local machine.
 
-    `git checkout git@github.com:jwjwyoung/SLCChecker.git`
+    `git clone git@github.com:jwjwyoung/SLCChecker.git`
 
 2. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
 
