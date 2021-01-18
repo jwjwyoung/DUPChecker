@@ -14,15 +14,16 @@ Incompatibility of protocol files across versions, which are created using seria
 
 
 ## How to use
+1. Checkout SLCChecker to your local machine.
 
-1. check protobuf file
+1. Run Script
 
-    `python3 slcchecker.py  --app path_app --proto --v1 old_version_tag --v2 new_version_tag`
+    `python3 slcchecker.py  --app path_app --filetype --v1 old_version_tag --v2 new_version_tag`
 
-    i.e.
+    e.g. for proto file:
 
     `python3 slcchecker.py  --app hbase --proto --v1 rel/2.2.6 --v2 rel/2.3.3`
+    
+    e.g. for thrift file:
 
-2. check thrift file
-
-    `python3 slcchecker.py  --app path_app --thrift --v1 old_version_tag --v2 new_version_tag`
+    `python3 slcchecker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
