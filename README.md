@@ -37,6 +37,20 @@ Checkout SLCChecker to your local machine.
 
     `python3 slcchecker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
 
+## Reproduce Experiments in the Paper Section 6.2.2
+
+1. Checkout the required applications. 
+
+  (1). hbase `git clone https://github.com/apache/hbase.git`
+  
+  (2). hdfs, yarn `git clone https://github.com/apache/hadoop.git`
+  
+  (3). mesos `git clone https://github.com/apache/mesos.git`
+
+  (4). hive `git clone https://github.com/apache/hive.git`
+
+  (5). impala `git clone https://github.com/apache/impala.git`
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
