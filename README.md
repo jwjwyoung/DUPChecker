@@ -2,8 +2,7 @@
 
 ## What can SLCChecker do:
 
-Incompatibility of protocol files across versions, which are created using serialization library such as PortocolBuffer and Thrift :
-
+Incompatibility of protocol files across versions, which are created using serialization library such as PortocolBuffer and Thrift:
 
     (1). Add/delete required field. 
 
