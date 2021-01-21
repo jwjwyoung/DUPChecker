@@ -1,8 +1,8 @@
-# Serialization Library Compatibility Checker
+# DUPChecker: Serialization Library Compatibility Checker
 
-## What can SLCChecker do:
+## What can DUPChecker do:
 
-SLCChecker analyzes data syntax defined using standard serialization libraries and detect incompatibility across versions, which can lead to upgrade failures. 
+DUPChecker analyzes data syntax defined using standard serialization libraries and detect incompatibility across versions, which can lead to upgrade failures. 
 It focuses on two widely adopted serialization libraries, [Portocol Buffer](https://developers.google.com/protocol-buffers/docs/proto.) and [Apache Thrift](https://diwakergupta.github.io/thrift-missing-guide/).
 
 Protocols evolve over time. Developers can update any protocol to meet the program’s need. However, certain rules have to be followed to avoid data-syntax incompatibility across versions. Particularly, the manuals of Protocol Buffer and Apache Thrift both state the following rules:
@@ -13,12 +13,12 @@ Protocols evolve over time. Developers can update any protocol to meet the progr
 
     (3).  A  required field has been changed to non-required. 
 
-Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `ERROR` by SLCChecker; violating the third rule may lead to failures, which will be referred to as `WARNING` by SLCChecker, if the new version generates data that does not contain its no-longer-required data member. For other type of changes such as changing field type,
-SLCChecker will output `INFO` level information. 
+Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `ERROR` by DUPChecker; violating the third rule may lead to failures, which will be referred to as `WARNING` by DUPChecker, if the new version generates data that does not contain its no-longer-required data member. For other type of changes such as changing field type,
+DUPChecker will output `INFO` level information. 
 
 ## Installation
 
-Checkout SLCChecker to your local machine.
+Checkout DUPChecker to your local machine.
 
     `git clone git@github.com:jwjwyoung/SLCChecker.git`
 
