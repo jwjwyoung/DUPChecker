@@ -20,7 +20,7 @@ DUPChecker will output `INFO` level information.
 
 Checkout DUPChecker to your local machine.
 
-    `git clone git@github.com:jwjwyoung/SLCChecker.git`
+    `git clone git@github.com:jwjwyoung/DUPChecker.git`
 
 ## Usage
 1. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
@@ -65,4 +65,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## LICENSE
 
-[MIT](https://github.com/jwjwyoung/SLCChecker/blob/master/LICENSE)
+[MIT](https://github.com/jwjwyoung/DUPChecker/blob/master/LICENSE)
