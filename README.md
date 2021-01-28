@@ -27,15 +27,15 @@ Checkout DUPChecker to your local machine.
 
 2. Run Script
 
-    `python3 slcchecker.py  --app path_app --filetype --v1 old_version_tag --v2 new_version_tag`
+    `python3 checker.py  --app path_app --filetype --v1 old_version_tag --v2 new_version_tag`
 
     e.g. check for proto file:
 
-    `python3 slcchecker.py  --app hbase --proto --v1 rel/2.2.6 --v2 rel/2.3.3`
+    `python3 checker.py  --app hbase --proto --v1 rel/2.2.6 --v2 rel/2.3.3`
     
     e.g. check for thrift file:
 
-    `python3 slcchecker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
+    `python3 checker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
 
 ## Reproduce Experiments in the Paper Section 6.2.2
 
